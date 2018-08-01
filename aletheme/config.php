@@ -42,6 +42,13 @@ function aletheme_get_options() {
                         "id" => "ale_sitelogofooter",
                         "std" => "",
                         "type" => "upload");
+						
+	 $options[] = array( "name" => "Insert The Slider Slug",
+                        "desc" => "Get the slug on the Sliders Setting Page",
+                        "id" => "ale_homesliderslug",
+                        "std" => "",
+                        "type" => "text",
+                        );					
 
     $options[] = array( 'name' => "Manage Background",
                         'desc' => "Select the background color, or upload a custom background image. Default background is the #f5f5f5 color",

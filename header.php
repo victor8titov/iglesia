@@ -14,7 +14,10 @@
 	<div class="wrapper cf">
 	
 	<div class="header_third search_section menu_buttom cf">
-		<div class="menu_icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+		<div class="menu_icon">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+			<i class="fa fa-times" style= "display: none;" aria-hidden="true"></i>
+		</div>
 		<div class="search_box">
 		<?php echo get_search_form(); ?>
 		</div>

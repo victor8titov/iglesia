@@ -13,7 +13,7 @@ get_header(); ?>
 				<li>
 					<figure>
 						<?php if ($slide['image']) : ?>
-							<img src="<?php echo $slide['image'] ?>" alt="<?php echo $slide['title'];	?>">
+							<img src="<?php echo $slide['image'] ?>"  alt="<?php echo $slide['title'];	?>">
 							<?php endif ?>
 							<?php if($slide['title'] or $slide['description']){ ?>
 							<figcaption>

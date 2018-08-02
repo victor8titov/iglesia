@@ -19,12 +19,14 @@
 			<i class="fa fa-times" style= "display: none;" aria-hidden="true"></i>
 		</div>
 		<div class="search_box">
-		<?php echo get_search_form(); ?>
+			<?php echo get_search_form(); ?>
 		</div>
 	</div>
 	
 	<div class="header_third logo_section">
+		<?php if (ale_get_option('sitelogo')) { ?>
 		<a href="<?php echo home_url("/")?>" class="logo_link"><img src="<?php echo ale_get_option('sitelogo'); ?>"> </a>
+		<?php } ?>
 	</div>
 	
 	<div class="header_third social_section">

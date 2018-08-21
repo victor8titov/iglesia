@@ -105,36 +105,70 @@ function aletheme_get_options() {
                         "std" => "",
                         "type" => "text");
 
-    $options[] = array( "name" => "Typography",
+   /*			--- Выбор шрифта во вкладке Typograhy --- 			*/
+   $options[] = array( "name" => "Typography",
                         "type" => "heading");
 
-    $options[] = array( "name" => "Select the body Font from Google Library",
-                        "desc" => "The default Font is - Raleway",
+/*				--- Подключения шрифта №1
+					
+					Droid Serif
+									--- 				*/
+$options[] = array( "name" => "Select the body Font from Google Library",
+                        "desc" => "The default Font is - Droid Serif",
                         "id" => "ale_headerfont",
-                        "std" => "Raleway",
+                        "std" => "Droid+Serif",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the body Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 600",
+                        "desc" => "The default Font (extended)",
                         "id" => "ale_headerfontex",
-                        "std" => "600",
+                        "std" => "400,400i,700,700i",
                         "type" => "text",
                         );
 
-    $options[] = array( "name" => "Select the Headers Font from Google Library",
-                        "desc" => "The default Font is - Libre Baskerville",
+/*						--- end font 1 ---					*/
+
+  /*				--- Подключения шрифта №2
+					
+					Playfair Display SC
+									--- 				*/
+  $options[] = array( "name" => "Select the Headers Font from Google Library",
+                        "desc" => "The default Font is - Playfair Display SC",
                         "id" => "ale_mainfont",
-                        "std" => "Libre+Baskerville",
+                        "std" => "Playfair+Display+SC",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 400,400italic",
+                        "desc" => "The default Font (extended)",
                         "id" => "ale_mainfontex",
-                        "std" => "400,400italic",
+                        "std" => "400,400i,700,700i,900,900i",
                         "type" => "text",
                         );
+
+/*						--- end font 2 ---					*/
+
+/*				--- Подключения шрифта №3
+					
+					Playfair Display
+									--- 				*/
+  $options[] = array( "name" => "Select the Headers Font from Google Library",
+                        "desc" => "The default Font is - Playfair Display",
+                        "id" => "ale_thirdfont",
+                        "std" => "Playfair+Display",
+                        "type" => "select",
+                        "options" => $headerfont);
+
+    $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
+                        "desc" => "The default Font (extended)",
+                        "id" => "ale_thirdfontex",
+                        "std" => "400",
+                        "type" => "text",
+                        );
+
+/*						--- end font 3 ---					*/
+
 
     $options[] = array( 'name' => "H1 Style",
                         'desc' => "Change the h1 style",

@@ -4,7 +4,9 @@
 @color_darkgrey: #9CAAA8; 
 @dark_color: #262626;
 @yellow_color: #eedf9c;
+//@yellow: #fce374;
 @hover_color: #804258;
+@header_color: #7f4258;
 
 /* Your Custom code here */
 
@@ -602,3 +604,104 @@ footer.main-footer {
 		}
 	}
 	
+
+
+
+
+/* 							Inner Header 					*/
+.inner_header {
+	min-height: 68px;
+	background-color: @header_color;
+	color: #b18b99;
+	text-align: center;
+	font-family: 'Droid Serif', serif;
+	
+	
+	.breadcrumbs {
+		padding-top: 30px;
+	}
+	
+	a {
+		color: #fff;
+		.transition(all 300ms ease-in-out);
+		
+		&:hover {
+			.opacity(0.6);
+			.transition(all 300ms ease-in-out);
+		}
+	}
+}
+
+
+.container {
+	margin-top: 40px;
+	
+	h2.page_title {
+		text-align: center;
+		color: @header_color;
+		font-size: 64px;
+		text-transform: uppercase;
+		margin-bottom: 45px;
+		font-family: 'Playfair Display SC', serif; 
+	}
+	.page_content {
+		color: #a3a3a3;
+		font-size: 14px;
+		line-height: 24px;
+		text-align: center;
+		margin-bottom: 50px;
+		
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			text-align: center;
+			
+		}
+	}
+	.contacts_data {
+		margin-bottom: 90px;
+		margin-left: 80px;
+		margin-right: 80px;
+		.third_part {
+			
+			width: 33.3%;
+			float: left;
+			
+			&.emailbox {
+				box-sizing: border-box;
+				padding-left: 40px;
+			}
+			
+			i.fa {
+				font-size: 18px;
+				color: @yellow_color;
+				margin-right: 10px; 
+			}
+			span.label {
+				display: block;
+				font-size: 12px;
+				color: #a3a3a3;
+				line-height: 24px;
+			}
+			span.value {
+			margin-left: 26px;
+			font-size: 15px;
+			
+			&.phone_number {
+				font-size: 28px;
+				color: #000;
+			}
+			a {
+				color: inherit;
+				.transition(all 300ms ease-in-out);
+				
+				&:hover {
+					.opacity(0.6);
+					.transition(all 300ms ease-in-out);
+				}
+			}
+			}
+			
+		}
+	}
+}

@@ -327,6 +327,20 @@ $options[] = array( "name" => "Select the body Font from Google Library",
                             'image_3' => $imagepath.'/2cr.png', ),
         );
 	
+	$options[] = array( "name" => "Maps settings",
+						"type" => "heading");
+	$options[] = array( "name" => "Maps Icon",
+                        "desc" => "Upload or put the icon link ",
+                        "id" => "ale_mapicon",
+                        "std" => "",
+                        "type" => "upload");
+						
+	$options[] = array( "name" => "Map Style",
+                        "desc" => "Insert the map style from Snazzy Maps Service",
+                        "id" => "ale_mapstyle",
+                        "std" => "",
+                        "type" => "text");					
+	
 	return $options;
 }
 

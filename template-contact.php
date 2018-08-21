@@ -71,7 +71,7 @@ get_header();
 				</div>
 			<?php wp_nonce_field() ?>
 			</form>	
-	   </div>
+	   </div> 
 	</div> 
 	<div class = "contact_map">
 	   	<?php if(ale_get_meta('address')) {

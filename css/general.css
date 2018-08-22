@@ -1383,3 +1383,75 @@ footer.main-footer .bottom_footer .footer_social i {
   box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.4);
   z-index: 99;
 }
+/*						--- Галерея --- 			*/
+.gallery-page .gallery-post {
+  display: inline-block;
+  float: left;
+  margin: 0 20px 20px 0;
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.gallery-page .gallery-post:nth-child(7),
+.gallery-page .gallery-post:nth-child(3),
+.gallery-page .gallery-post:nth-child(10),
+.gallery-page .gallery-post:nth-child(12) {
+  margin-right: 0;
+}
+.gallery-page .gallery-post:hover .mask {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.gallery-page .gallery-post .mask {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(127, 66, 88, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-page .gallery-post .mask .arrow {
+  width: 70px;
+  background: #7f4258;
+  height: 70px;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 70px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}

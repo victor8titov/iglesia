@@ -887,24 +887,27 @@ function aletheme_get_images_sizes() {
 
         'gallery' => array(
             array(
-                'name'      => 'gallery-thumba',
-                'width'     => 430,
-                'height'    => 267,
+                'name'      => 'gallery-kvadrat',
+                'width'     => 225,
+                'height'    => 225,
                 'crop'      => true,
             ),
             array(
-                'name'      => 'gallery-mini',
-                'width'     => 100,
-                'height'    => 67,
+                'name'      => 'gallery-vertical',
+                'width'     => 470,
+                'height'    => 225,
                 'crop'      => true,
             ),
             array(
-                'name'      => 'gallery-big',
-                'width'     => 680,
-                'height'    => 9999,
-                'crop'      => false,
+                'name'      => 'gallery-bigkvadrat',
+                'width'     => 470,
+                'height'    => 470,
+                'crop'      => true,
             ),
         ),
+		
+		//			--- убрали в уроки 12 4:50
+		/*
         'post' => array(
             array(
                 'name'      => 'post-thumba',
@@ -918,7 +921,7 @@ function aletheme_get_images_sizes() {
                 'height'    => 200,
                 'crop'      => true,
             ),
-        ),
+        ),*/
 
 
     );

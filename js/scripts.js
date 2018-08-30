@@ -6,6 +6,8 @@ jQuery(function($) {
     $('.portfolioslider').flexslider({
         animation:'slide',
         smoothHeight:true,
+		prevText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+		nextText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
         controlNav: false
     });
 
@@ -15,7 +17,7 @@ jQuery(function($) {
         controlNav: false
     });
 
-	 $('.flexslider').flexslider({
+	 $('.homeslider').flexslider({
         animation:'slide',
 		prevText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
 		nextText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
@@ -24,7 +26,7 @@ jQuery(function($) {
     });
 
 
-	$('.flexslider .flex-viewport ').css('overflow', 'visible');
+	$('.homeslider .flex-viewport ').css('overflow', 'visible');
 	
 	$('.menu_icon i.fa-bars').on('click',function() {
 		$('.menu_icon i.fa-bars').css('display', 'none');

@@ -975,6 +975,23 @@ function aletheme_get_post_types() {
             'singular' => 'Сервис',
             'multiple' => 'Сервисы'
         ),
+		'events' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'excerpt',
+					'comments'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Event',
+            'multiple' => 'Events',
+            
+        ),
     );
 }
 
@@ -1018,6 +1035,18 @@ function aletheme_get_taxonomies() {
             'singular'    => 'Цена сервиса',
             'multiple'    => 'Цены сервисов',
         ),
+		
+		'events-category'    => array(
+            'for'        => array('events'),
+            'config'    => array(
+                'sort'        => true,
+                'args'        => array('orderby' => 'term_order'),
+                'hierarchical' => true,
+            ),
+            'singular'    => 'Event Category',
+            'multiple'    => 'Event Categories',
+        ),
+        
     );
 }
 

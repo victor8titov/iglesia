@@ -39,27 +39,47 @@
             
             
             <!-- Comment Form -->
+            <div class="add_comment_form">
             <a name="respond"></a>
             <?php if (comments_open()) : ?>
                 <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-                    <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'aletheme'), wp_login_url(get_permalink())); ?></p>
+                    <p class="info">
+                    	<?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'aletheme'), wp_login_url(get_permalink())); ?>
+                    </p>
                 <?php else : ?>
                
                  <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" id="comment-form" method="post" class="comment-form">
-                   
-                    <p><?php _e('Add a comment to this post','aletheme'); ?> <?php cancel_comment_reply_link(); ?></p>
+                   	
+                   	
+                    <div class="form_title">
+                    	<span class="left_line"></span>
+                    	<span class= "title">
+                    		<h4><?php _e('Leave a comment','aletheme'); ?> <?php cancel_comment_reply_link(); ?></h4>
+                    	</span>
+                    	<span class="right_line"></span>
+                    </div>
+                    	
                     <?php if (is_user_logged_in()) : ?>
-                        <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'aletheme'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'aletheme'); ?>"><?php _e('Log out &raquo;', 'aletheme'); ?></a></p>
+                        <p class="info">
+                        	<?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'aletheme'), get_option('siteurl'), $user_identity); ?> 
+                        		<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'aletheme'); ?>"><?php _e('Log out &raquo;', 'aletheme'); ?>
+                        		</a>
+                        </p>
                     <?php else : ?>
-                    <div class="personal">
-                        <input type="text" class="name" placeholder="<?php _e('Your Name', 'aletheme'); ?> *" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> required="required">
-                        <input type="email" placeholder="<?php _e('Your Email', 'aletheme'); ?> *" class="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> required="required" email="true">
-                        <input type="url" placeholder="<?php _e('Your Site', 'aletheme'); ?>" class="site" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" >
+                    <div class="form-item personal cf">
+                        <input type="text" class="name" placeholder="<?php _e('Your Name', 'aletheme'); ?> " name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> required="required">
+                       
+                         <input type="email" placeholder="<?php _e('Your Email', 'aletheme'); ?> " class="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> required="required" email="true">
+                       
+                         <input type="url" placeholder="<?php _e('Your Site', 'aletheme'); ?>" class="site" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" >
                     </div>
                     <?php endif; ?>
-                    <div class="message-submit">
-                        <input name="submit" class="submit" type="submit" value="<?php _e('SUBMIT', 'aletheme'); ?>" />
-                        <textarea name="comment" placeholder="<?php _e('Say Something', 'aletheme'); ?> *" id="comment" class="message" required></textarea>
+                    <div class="form-item message-box">
+                        
+                        <textarea name="comment" placeholder="<?php _e('Message...', 'aletheme'); ?>" id="comment" class="message" required></textarea>
+                    </div>
+                    <div class="form-item submit-box">
+                    	<input name="submit" class="submit" type="submit" value="<?php _e('Comment', 'aletheme'); ?>" />
                     </div>
 
                     <?php comment_id_fields(); ?>
@@ -67,7 +87,7 @@
                 </form>
                 <?php endif; // if registration required and not logged in ?>
             <?php endif; ?>
-
+			</div>
         </div>
   
     

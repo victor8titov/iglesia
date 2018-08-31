@@ -1630,3 +1630,72 @@ footer.main-footer .bottom_footer .footer_social i {
   margin: 0 120px;
   text-align: center;
 }
+/*
+	--- Style comments ---
+*/
+.comments-container .comments_section_title {
+  color: #7f4258;
+  font-size: 44px;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  font-family: Playfair Display SC;
+  text-transform: none;
+}
+.comments-container .comment .comment1 {
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  padding: 30px 50px;
+  margin-top: -1px;
+}
+.comments-container .comment .comment2 {
+  background: #fdfdfd;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  padding: 30px 50px;
+  margin-top: -1px;
+  margin-left: 60px;
+}
+.comments-container .comment .comment_data {
+  color: #a3a3a3;
+  font-size: 12px;
+}
+.comments-container .comment .comment_data p {
+  color: #a3a3a3;
+  font-size: 12px;
+}
+.comments-container .comment .comment_info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.comments-container .comment .comment_info .comment-reply-link {
+  font-size: 13px;
+  color: #7f4258;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.comments-container .comment .comment_info i {
+  font-size: 12px;
+  color: #7f4258;
+}
+.comments-container .comment .comment_info .img img {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  margin-right: 16px;
+}
+.comments-container .comment .comment_info .info .name {
+  font-size: 17px;
+  color: #000;
+}
+.comments-container .comment .comment_info .info .time {
+  font-family: Arial, Helvetica sans-serif;
+  font-size: 10px;
+  color: #b3b3b3;
+}

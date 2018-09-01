@@ -1869,3 +1869,86 @@ footer.main-footer .bottom_footer .footer_social i {
 .add_comment_form .form-item input[type="url"] {
   margin-left: 15px;
 }
+/*
+		--- Archive-events --- 
+*/
+.ale_events_page .events_categories {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 50px;
+}
+.ale_events_page .events_categories .event_category_link {
+  display: block;
+  padding-bottom: 30px;
+  margin-right: 25px;
+  margin-left: 25px;
+  padding-top: 5px;
+  color: #b3b3b3;
+  border-bottom: 2px solid transparent;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.ale_events_page .events_categories .event_category_link:hover {
+  color: #838383;
+  border-bottom: 2px solid #ffefa7;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.ale_events_page .events_categories .taxlist ul {
+  text-align: center;
+}
+.ale_events_page .events_categories .taxlist ul li {
+  display: inline-block;
+}
+.ale_events_page .events_categories .taxlist ul li.active a {
+  color: #838383;
+  border-bottom: 2px solid #ffefa7;
+}
+.ale_events_page .events_list .item_event {
+  width: calc(33.33% - 20px);
+  margin: 0 10px;
+  float: left;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.ale_events_page .events_list .item_event .post_date {
+  color: #b3b3b3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+.ale_events_page .events_list .item_event h3 {
+  text-transform: none;
+  font-size: 13px;
+  color: #000;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+.ale_events_page .events_list .item_event h3 a {
+  color: inherit;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+.ale_events_page .events_list .item_event h3 a:hover {
+  color: #7f4258;
+  text-decoration: underline;
+  -moz-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  -webkit-opacity: 0.75;
+  opacity: 0.75;
+  -webkit-transition: all 1 0ms ease-in-out;
+  -moz-transition: all 1 0ms ease-in-out;
+  -ms-transition: all 1 0ms ease-in-out;
+  -o-transition: all 1 0ms ease-in-out;
+  transition: all 1 0ms ease-in-out;
+}

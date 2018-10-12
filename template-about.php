@@ -1,9 +1,11 @@
 <?php
 /**
- * Template Name: Template About (team)
+ * Template Name: Template About 
  */
 get_header(); ?>
     <!-- Content -->
+    
+    <h1> xxxxxxxxxxxxxxxxxx</h1>
     <div class="about-center-align">
 
         <div class="content-left">

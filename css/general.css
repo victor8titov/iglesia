@@ -2089,3 +2089,98 @@ footer.main-footer .bottom_footer .footer_social i {
   text-align: left;
   margin-bottom: 30px;
 }
+.ale_about_page .our_people {
+  background: #5a1830;
+  position: relative;
+  z-index: 0;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+.ale_about_page .our_people .bg_people_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -moz-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  -webkit-opacity: 0.2;
+  opacity: 0.2;
+  z-index: -1;
+  background-size: cover;
+}
+.ale_about_page .our_people .top_tittle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+.ale_about_page .our_people .top_tittle .left_arrow .left {
+  width: 45px;
+  height: 45px;
+  display: block;
+  border: 2px solid transparent;
+  text-align: center;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.ale_about_page .our_people .top_tittle .left_arrow .left:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.ale_about_page .our_people .top_tittle .center_info {
+  text-align: center;
+  margin-left: 38px;
+  margin-right: 38px;
+}
+.ale_about_page .our_people .top_tittle .center_info h3.people_title {
+  color: #ffefa7;
+  font-size: 44px;
+  text-transform: none;
+  margin-bottom: 20px;
+  line-height: 44px;
+}
+.ale_about_page .our_people .top_tittle .center_info span.people_desc {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 24px;
+}
+.ale_about_page .our_people .top_tittle .right_arrow .right {
+  width: 45px;
+  height: 45px;
+  display: block;
+  border: 2px solid transparent;
+  text-align: center;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.ale_about_page .our_people .top_tittle .right_arrow .right:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

@@ -583,6 +583,28 @@ function aletheme_metaboxes($meta_boxes) {
             ),
 		)
     );
+	
+	$meta_boxes[] = array(
+        'id'         => 'people_page_metabox',
+        'title'      => 'People Options',
+        'pages'      => array( 'people', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        //'show_on'    => array( 'key' => 'page-template', 'value' => array('template-about.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            
+			array(
+                'name' => __('Team Position', 'aletheme'),
+                'desc' => 'Type here the position',
+                'id'   => $prefix . 'people_post',
+                'type' => 'text',
+            ),
+			
+			
+        )
+    );
 
   //			Данные метабохы были удалены в ураке 9 13:59
   /* 
@@ -1060,6 +1082,15 @@ function aletheme_get_images_sizes() {
             ),
         ),
 		
+		 'people' => array(
+            array(
+                'name'      => 'people-user',
+                'width'     => 87,
+                'height'    => 87,
+                'crop'      => true,
+            ),
+            
+        ),
 		//			--- убрали в уроки 12 4:50
 		/*
         'post' => array(
@@ -1150,6 +1181,7 @@ function aletheme_get_post_types() {
                     'title',
                     'editor',
                     'excerpt',
+					'thumbnail',
 					
                 ),
                 'show_in_nav_menus'=> true,

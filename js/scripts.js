@@ -2,6 +2,16 @@ jQuery(function($) {
     "use strict";
 
     // Custom jQuery Code Here
+	
+	// 	Урок 22 для работы слайдера на страницы about.php
+	$('.peoples_list').slick({
+	  infinite: true,
+	  slidesToShow: 4,
+	  slidesToScroll: 4,
+	  nextArrow: '.right_arrow .right',
+	  prevArrow: '.left_arrow .left'
+	  
+	});
 
     $('.portfolioslider').flexslider({
         animation:'slide',

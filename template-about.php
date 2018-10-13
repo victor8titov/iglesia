@@ -92,17 +92,49 @@ get_header(); ?>
 			<?php };?>
 			
 			<?php if(ale_get_meta('people_display') === 'show') {?>
-				<section class="our_people" <?php if(ale_get_meta('people_bg')) { echo 'style="background-image:url('.ale_get_meta('people_bg').');"'; }; ?>>
+				<section class="our_people" >
+					<div class="bg_people_mask" <?php if(ale_get_meta('people_bg')) { echo 'style="background-image:url('.ale_get_meta('people_bg').');"'; }; ?>></div> 
 					<div class="wrapper">
 						<div class="top_tittle">
 							<div class="left_arrow">
+								<span class="left">
+									<i class="fa fa-angle-left" aria-hidden="true"></i>
+								</span>
 							</div>
 							<div class="center_info">
 								<?php if (ale_get_meta('people_title')) {?><h3 class="people_title"><?php ale_meta('people_title'); ?></h3><?php };?>
 								<?php if (ale_get_meta('people_text')) {?><span class="people_desc"><?php ale_meta('people_text'); ?></span><?php };?>
 							</div>
 							<div class="right_arrow">
+								<span class="right">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</span>
 							</div>
+						</div>
+						<div class="peoples_list">
+							 <?php 
+							 $args = array(
+							 		'post_type' => 'people',
+									'post_per_page' => -1
+									);
+							 $our_people = new WP_Query($args);
+							 
+							 if ($our_people -> have_posts()) : while ($our_people -> have_posts()) : $our_people -> the_post(); ?>
+								<div class="item_people">
+									<div class="item_people">
+										<?php echo get_the_post_thumbnail($post->ID,'people-user'); ?>
+									</div>
+									<div class="people_info">
+										<h4 class="name"><?php echo the_title() ?></h4>
+										<?php if(ale_get_meta('people_post')) {?>
+										<span class="post"><?php ale_meta('people_post'); ?></span>
+										<?php }?>
+									</div>
+								</div>
+							
+							<?php endwhile;  endif;  ?>
+								
+							
 						</div>
 					</div>
 				</section>

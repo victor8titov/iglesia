@@ -1498,7 +1498,74 @@ footer.main-footer {
 	}	
 	
 	.our_people {
+		background: #5a1830;
+		position: relative;
+		z-index: 0;
+		padding-top: 65px;
+		padding-bottom: 65px; 
 		
+		.bg_people_mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			.opacity(0.2);
+			z-index: -1;
+			background-size: cover;
+		}
+		
+		.top_tittle {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 70px;
+			.left_arrow {
+				.left {
+					width: 45px;
+					height: 45px;
+					display: block;
+					border: 2px solid transparent;
+					text-align: center;
+					line-height: 45px; 
+					color: rgba(255,255,255,.3);
+					font-size: 30px;
+					.rounded(100%);
+					.transition(all 300ms ease-in-out);
+					cursor: pointer;
+					
+					&:hover {
+						border-color: rgba(255,255,255,.2);
+						color: #fff;
+					}
+				}
+			}
+			.center_info {
+				text-align: center; 
+				margin-left: 38px;
+				margin-right: 38px;
+				
+				h3.people_title {
+					color: #ffefa7;
+					font-size: 44px;
+					text-transform: none;
+					margin-bottom: 20px;
+					line-height: 44px;	
+					 
+				}
+				span.people_desc {
+					display: inline-block;
+					color: rgba(255,255,255,.5);
+					font-size: 12px;
+					line-height: 24px;
+				}
+			}
+			.right_arrow {
+			  .right {
+			  	.left_arrow > .left
+			  }
+			}
+			
+		}
 	}
 	
 	

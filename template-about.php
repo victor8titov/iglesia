@@ -15,7 +15,7 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</section>
 			<?php if(ale_get_meta('info_display') === 'show') {?>
-				<section class="info_box" <?php if(ale_get_meta('info_bg')) { echo 'style="background-image:url('.ale_get_meta('info_bg').');"'; }; ?>>
+				<section class="info_box" data-type="background" <?php if(ale_get_meta('info_bg')) { echo 'style="background-image:url('.ale_get_meta('info_bg').');"'; }; ?>>
 					<div class="center_block">
 					<h3 class="info_title"><?php ale_meta('info_title'); ?></h3>
 					<span class="description"><?php ale_meta('info_desc'); ?></span>
@@ -121,14 +121,16 @@ get_header(); ?>
 							 
 							 if ($our_people -> have_posts()) : while ($our_people -> have_posts()) : $our_people -> the_post(); ?>
 								<div class="item_people">
-									<div class="item_people">
+									<div class="mask_hover">
+										<div class="image_people">
 										<?php echo get_the_post_thumbnail($post->ID,'people-user'); ?>
-									</div>
-									<div class="people_info">
+										</div>
+										<div class="people_info">
 										<h4 class="name"><?php echo the_title() ?></h4>
 										<?php if(ale_get_meta('people_post')) {?>
 										<span class="post"><?php ale_meta('people_post'); ?></span>
 										<?php }?>
+										</div>
 									</div>
 								</div>
 							

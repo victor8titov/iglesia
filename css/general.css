@@ -2034,8 +2034,8 @@ footer.main-footer .bottom_footer .footer_social i {
 .ale_about_page .info_box {
   margin: 80px 0;
   padding: 80px;
-  background-position: 0 0;
   background-size: cover;
+  background-attachment: fixed;
 }
 .ale_about_page .info_box .center_block {
   max-width: 660px;
@@ -2183,4 +2183,51 @@ footer.main-footer .bottom_footer .footer_social i {
 .ale_about_page .our_people .top_tittle .right_arrow .right:hover {
   border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+.ale_about_page .our_people .peoples_list .item_people {
+  background: url(img/bottom.png);
+  margin: 10px;
+  position: relative;
+  min-height: 87px;
+  cursor: pointer;
+}
+.ale_about_page .our_people .peoples_list .item_people .mask_hover {
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info h4.name {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info span.post {
+  color: #b3b3b3;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 11px;
+  display: inline-block;
+}
+.ale_about_page .our_people .peoples_list .item_people:hover .mask_hover {
+  margin-top: -10px;
+  margin-left: -10px;
 }

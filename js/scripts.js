@@ -3,6 +3,32 @@ jQuery(function($) {
 
     // Custom jQuery Code Here
 	
+	
+	//		Урок 23 создание парралакса для template-about.php
+	var $window = $(window);
+	
+	if($('section[data-type="background"]').length) {
+		$('section[data-type="background"]').each(function() {
+			
+			var $obj = $(this);
+			var offset = $obj.offset().top;
+			
+			$(window).scroll(function() {
+				offset = $obj.offset().top;
+				
+				if($window.scrollTop() > (offset-window.innerHeight)) {
+					var yPos = -(($window.scrollTop() - offset)/5);
+					var coords = '50% ' + (yPos) + 'px';
+					$obj.css({backgroundPosition: coords});
+				}
+			});
+			$(window).resize(function() {
+				offset = $obj.offset().top;
+			});
+		});
+	}
+	
+	
 	// 	Урок 22 для работы слайдера на страницы about.php
 	$('.peoples_list').slick({
 	  infinite: true,

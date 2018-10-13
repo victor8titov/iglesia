@@ -1435,8 +1435,9 @@ footer.main-footer {
 	.info_box {
 			margin: 80px 0;
 			padding: 80px;
-			background-position: 0 0;
-			background-size: cover;  
+			//background-position: 0 0;
+			background-size: cover; 
+			background-attachment: fixed;
 			.center_block {
 				max-width: 660px;
 				margin: 0 auto;
@@ -1565,6 +1566,59 @@ footer.main-footer {
 			  }
 			}
 			
+		}
+		
+		.peoples_list {
+			.item_people {
+				background: url(img/bottom.png);
+				margin: 10px;
+				position: relative;
+				min-height: 87px;
+				cursor: pointer;
+				
+				.mask_hover {
+					background: #fff;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					.transition(all 300ms ease-in-out);
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0; 
+					left: 0;
+					
+					.people_info {
+						margin-left: 20px;
+						margin-right: 20px;
+						h4.name {
+							color: #000;
+							font-family: Arial, Helvetica, sans-serif;
+							font-size: 14px;
+							font-weight: bold;
+							text-transform: none;
+							line-height: 14px;
+							margin-bottom: 10px;
+							
+						}
+						
+						span.post {
+							color: #b3b3b3;
+							font-size: 11px;
+							font-family: Arial, Helvetica, sans-serif;
+							line-height: 11px;
+							display: inline-block;
+						}
+					}
+				}
+				&:hover {
+					.mask_hover {
+						margin-top: -10px;
+						margin-left: -10px;
+						
+					}
+				}
+			}
 		}
 	}
 	

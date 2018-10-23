@@ -605,6 +605,28 @@ function aletheme_metaboxes($meta_boxes) {
 			
         )
     );
+	
+	$meta_boxes[] = array(
+        'id'         => 'sermons_metabox',
+        'title'      => 'Sermons Options',
+        'pages'      => array( 'sermons', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        //'show_on'    => array( 'key' => 'page-template', 'value' => array('template-about.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            
+			array(
+                'name' => __('The Date', 'aletheme'),
+                'desc' => 'Type here the sermons date',
+                'id'   => $prefix . 'sermons_date',
+                'type' => 'text_datetime_timestamp',
+            ),
+			
+			
+        )
+    );
 
   //			Данные метабохы были удалены в ураке 9 13:59
   /* 
@@ -1089,7 +1111,21 @@ function aletheme_get_images_sizes() {
                 'height'    => 87,
                 'crop'      => true,
             ),
-            
+		),
+          // lesson_25
+		  'sermons' => array(
+            array(
+                'name'      => 'sermons-list',
+                'width'     => 306,
+                'height'    => 172,
+                'crop'      => true,
+            ),
+			array(
+                'name'      => 'sermons-biglist',
+                'width'     => 369,
+                'height'    => 226,
+                'crop'      => true,
+            ),
         ),
 		//			--- убрали в уроки 12 4:50
 		/*
@@ -1139,7 +1175,7 @@ function aletheme_get_post_types() {
                 'first_image',
             )
         ),
-        'services' => array(
+        /*'services' => array(
             'config' => array(
                 'public' => true,
                 'menu_position' => 20,
@@ -1154,7 +1190,7 @@ function aletheme_get_post_types() {
             ),
             'singular' => 'Сервис',
             'multiple' => 'Сервисы'
-        ),
+        ),*/
 		'events' => array(
             'config' => array(
                 'public' => true,
@@ -1188,6 +1224,25 @@ function aletheme_get_post_types() {
             ),
             'singular' => 'People',
             'multiple' => 'People',
+            
+        ),
+		//		Урок 25 Добавили новый пост тайп SERMONS
+		'sermons' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'excerpt',
+					'thumbnail',
+					'comments'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Sermon',
+            'multiple' => 'Sermons',
             
         ),
     );

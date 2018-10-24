@@ -1354,7 +1354,7 @@ function get_breadcrumbs() {
 
         } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
             $post_type = get_post_type_object(get_post_type());
-            echo $before . $post_type->labels->singular_name . $after;
+            echo $before . $post_type->labels->name . $after;
 
         } elseif ( is_attachment() ) {
             $parent = get_post($parent_id);

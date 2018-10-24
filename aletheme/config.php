@@ -605,7 +605,8 @@ function aletheme_metaboxes($meta_boxes) {
 			
         )
     );
-	
+	//**************************************************
+			//			metabox for sermons post types
 	$meta_boxes[] = array(
         'id'         => 'sermons_metabox',
         'title'      => 'Sermons Options',

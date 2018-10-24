@@ -1,3 +1,20 @@
+
+@font-face { 
+font-family: 'RalewayRegular'; 
+src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+}
+@font-face { 
+font-family: 'RalewayBold'; 
+src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+}
+@font-face { 
+font-family: 'RalewayMedium'; 
+src: url('../fonts/Raleway-Medium.ttf') format('truetype');
+}
+@font-face { 
+font-family: 'RalewayLight'; 
+src: url('../fonts/Raleway-Light.ttf') format('truetype');
+}
 @import 'elements.less';
 
 @color_grey: #d4dad9;
@@ -7,6 +24,7 @@
 //@yellow: #fce374;
 @hover_color: #804258;
 @header_color: #7f4258;
+
 
 /* Your Custom code here */
 
@@ -1621,6 +1639,117 @@ footer.main-footer {
 					}
 				}
 			}
+		}
+	}
+	
+	
+}
+/*----------------------------------------------*/
+/*			page sermons 				*/
+h2.page_title {
+	text-align: center;
+	font-size: 64px;
+	color: @header_color;
+	
+	margin-top: 38px;
+	margin-bottom: 45px;
+}
+.next_sermon {
+	background-image: url('img/bottom_grey.png');
+	position: relative;
+	margin-bottom: 55px;
+		.mask_sermon {
+			position: relative;
+			left: -10px;
+			top: -10px;
+			
+			border: 6px solid #d4dad9;
+			padding: 60px 64px 60px 78px;
+			background-color: #fff;
+					
+			.next_item_sermon {
+				max-width: 948px;
+				
+				
+				.next_seremon_info {
+					float: left;
+					padding-right: 32px;
+					max-width: 363px;
+					border-right: 1px solid #f2f2f2;
+					text-align: right;
+					
+					.text_next {
+					font-family: Arial sans-serif;
+					font-size: 12px;
+					line-height: 18px;
+					color: #b3b3b3;
+					text-align: right;
+					
+					}
+					
+					
+					h4 {
+						a {
+							font-size: 26px;
+							color: #000;
+							text-transform: none;
+						}
+					}
+					p {
+						font-family: RalewayMedium, sans-serif;
+						font-size: 12px;
+						line-height: 24px;
+						color: #b3b3b3;
+						text-align: right;
+						
+					}
+					.next_sermon_timer {
+						font-size: 34px;
+						color: #d4dad9;
+					}
+				}
+				
+				img {
+					float: left;
+					padding-left: 40px;
+				}
+			}
+				
+	}
+}
+.sermons_list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+		
+	.item_sermon {
+		text-align: center;
+		max-width: 306px;
+		margin-right: 20px;
+		margin-bottom: 37px;
+		
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+		
+		
+		h3 {
+			margin: 23px 0 10px 0;
+			
+			a {
+				font-size: 14px;
+				font-family: RalewayMedium, sans-serif;
+				color: #000;
+				text-transform: none;
+				
+			}
+		
+	
+		}
+	.post_date {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #b3b3b3;
 		}
 	}
 	

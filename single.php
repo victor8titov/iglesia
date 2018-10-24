@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
     <div class = "container single_gallery">
 		<div class = "wrapper">
 		 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

@@ -2,8 +2,33 @@ jQuery(function($) {
     "use strict";
 
     // Custom jQuery Code Here
+	//		Урок 26 мой делаю таймер следующего события для страницы sermons 
 	
+	setInterval(timer, 1000);
 	
+	function timer() {
+		
+		$('.next_sermon_timer').each(function(){ $(this).text(calc_time($(this).attr('data-dateSermon')));});
+				
+		function calc_time(deadline) {
+			var current_date = new Date();
+			var deadline =  parseInt(deadline) - Math.floor(current_date.getTime()/1000);
+			
+			var time = {},str;
+			time.s = deadline%60;
+			time.m = ((deadline - time.s)/60)%60; 
+			//time.m = m%60;
+			time.h = ((deadline - time.s - time.m*60)/(60*60))%24;
+			//h = h%24;
+			time.d = (deadline - time.s - time.m*60 - time.h*60*60)/(24*60*60);
+			
+			for (var prop in time) {
+				if (time[prop] < 10) time[prop] = '0'+time[prop];
+				
+			}
+			return str = time.d+' : '+time.h+' : '+time.m+' : '+time.s;
+		}
+	}
 	//		Урок 23 создание парралакса для template-about.php
 	var $window = $(window);
 	

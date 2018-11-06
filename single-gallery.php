@@ -18,9 +18,7 @@
 						</div>
 					 </div>
 				 </div>
-			 	<div id="slider" class="flexslider portfolioslider">
-					<ul class="slides">
-					<?php $args = array(
+				 <?php $args = array(
 						'post_type' => 'attachment',
 						'numberposts' => -1,
 						'post_status' => null,
@@ -36,15 +34,19 @@
 						'post_parent' => $post->ID
 					);
 					$attachments = get_posts( $args );
-					if ( $attachments ) {
+				 if ($attachments) { ?>
+			 	<div id="slider" class="flexslider portfolioslider">
+					<ul class="slides">
+					<?php 
+										
 						foreach ( $attachments as $attachment ) { ?>
 							<li>
 								<?php echo wp_get_attachment_image( $attachment->ID, 'large' ); ?>
 							</li>
-						<?php }
-					} ?>
+						<?php }	?>
 					</ul>
 				</div>
+				<?php } ?>
 				<div class="post_content story">
 			  		<?php the_content(); ?>
 			  	</div>

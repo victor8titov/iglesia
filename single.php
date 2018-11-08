@@ -58,7 +58,7 @@
 			  	</div>
 			 
 			 <?php endwhile;  endif;  ?>
-			<?php comments_template(); ?> 
+			 <?php comments_template(); ?> 
 		</div>
  	</div>
    

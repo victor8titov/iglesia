@@ -1295,8 +1295,22 @@ function get_breadcrumbs() {
     $parent_id    = $parent_id_2 = $post->post_parent;
     $frontpage_id = get_option('page_on_front');
 
-    if (is_home() || is_front_page()) {
+/* -----------------------------------------------------------------------------*/
+	
+	echo "<pre><br>".  $frontpage_id ."</pre>";
+	//echo sprintf($link, $home_link, $text['home']);
+    if( $page_id = get_option('page_on_front') ){
+	echo " страница для главной установлена" .get_option('page_on_front') ;
+	}
 
+	if( $page_id = get_option('page_for_posts') ){
+	echo " страница для записей блога установлена".$page_id;
+	}
+	
+/*--------------------------------------------------------------------------*/	
+	
+	if (is_front_page()) {
+		
         if ($show_on_home == 1) echo '<div class="breadcrumbs"><a href="' . $home_link . '">' . $text['home'] . '</a></div>';
 
     }
@@ -1335,7 +1349,8 @@ function get_breadcrumbs() {
         } elseif ( is_year() ) {
             echo $before . get_the_time('Y') . $after;
 
-        } elseif ( is_single() && !is_attachment() ) {
+        } 
+		elseif ( is_single() && !is_attachment() ) {
             if ( get_post_type() != 'post' ) {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;

@@ -4,7 +4,7 @@
         <p><?php _e('open post','aletheme'); ?></p>
         <span class="darken"></span>
         <span class="border"></span>
-        <?php echo get_the_post_thumbnail($post->ID,'post-thumba') ?>
+        <?php echo get_the_post_thumbnail($post->ID,'post-bigbox') ?>
     </a>
     <div class="item-content">
         <a href="<?php the_permalink(); ?>" class="caption"><?php the_title(); ?></a>

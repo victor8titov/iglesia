@@ -628,6 +628,28 @@ function aletheme_metaboxes($meta_boxes) {
 			
         )
     );
+	$meta_boxes[] = array(
+        'id'         => 'post_metabox',
+        'title'      => 'Post Options',
+        'pages'      => array( 'post', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        //'show_on'    => array( 'key' => 'page-template', 'value' => array('template-about.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            
+			array(
+                'name' => __('About', 'aletheme'),
+                'desc' => 'About post',
+                'id'   => $prefix . 'post_type',
+                'type' => 'text',
+            ),
+			
+			
+        )
+    );
+
 
   //			Данные метабохы были удалены в ураке 9 13:59
   /* 
@@ -1129,21 +1151,21 @@ function aletheme_get_images_sizes() {
             ),
         ),
 		//			--- убрали в уроки 12 4:50
-		/*
-        'post' => array(
+		//		--Добавил при сам разработки 28
+		'post' => array(
             array(
-                'name'      => 'post-thumba',
-                'width'     => 475,
-                'height'    => 295,
-                'crop'      => true,
+                'name'      => 'post-bigbox',
+                'width'     => 470,
+                'height'    => 370,
+                'crop'      => false,
             ),
             array(
                 'name'      => 'post-minibox',
-                'width'     => 500,
-                'height'    => 200,
+                'width'     => 245,
+                'height'    => 268,
                 'crop'      => true,
             ),
-        ),*/
+        ),
 
 
     );

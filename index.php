@@ -1,18 +1,4 @@
 <?php get_header(); ?>
-<?php 
-
-$post_type = get_post_type( $post_id );
-echo $post_type;
-print_r(  is_single() && !is_attachment()  );
-
-       
-        
-
-
-
-
-?>
-
     <!-- Content -->
 <div class="blog-center-align">
 <h1>Blog</h1>
@@ -28,8 +14,7 @@ print_r(  is_single() && !is_attachment()  );
 			   <!-- Blog Item -->
 				<div class="blog-item">
 					<a href="<?php the_permalink(); ?>" class="img-post">
-						<?php echo get_the_post_thumbnail($post->ID,'post-bigbox') ?>
-					</a>
+						<?php echo get_the_post_thumbnail($post->ID,'post-bigbox') ?></a>
 					<div class="item-content">
 						<p class="category"><?php the_category(); ?> </p>
 						<a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a>
@@ -42,7 +27,7 @@ print_r(  is_single() && !is_attachment()  );
 						
 					</div>
 				</div>
-  
+  				<!-- end Blog Item -->
 			   
             <?php endwhile; else: ?>
                 <?php ale_part('notfound')?>

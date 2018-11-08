@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+   <h1>fack </h1>
     <!-- Content -->
     <div class="page-center">
         <div class="content">

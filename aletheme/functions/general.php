@@ -1264,7 +1264,15 @@ function ale_trim_excerpt($length) {
 }
 
 
-
+function ms($v) {
+	if (gettype($v) == "string") {echo $v; return;}			
+	echo "<br><pre>";
+	echo '------------------------------<br>';
+	print_r($v);
+	echo '<br>------------------------------';
+	echo "<pre><br>";
+				
+};
 
 
 // Breadcrumbs Custom Function
@@ -1287,28 +1295,15 @@ function get_breadcrumbs() {
     $after          = '</span>';
 
     global $post;
-    $home_link    = home_url('/');
+	$home_link    = home_url('/');
     $link_before  = '<span typeof="v:Breadcrumb">';
     $link_after   = '</span>';
     $link_attr    = ' rel="v:url" property="v:title"';
     $link         = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
     $parent_id    = $parent_id_2 = $post->post_parent;
     $frontpage_id = get_option('page_on_front');
+	$page_posts = get_option('page_for_posts');
 
-/* -----------------------------------------------------------------------------*/
-	
-	echo "<pre><br>".  $frontpage_id ."</pre>";
-	//echo sprintf($link, $home_link, $text['home']);
-    if( $page_id = get_option('page_on_front') ){
-	echo " страница для главной установлена" .get_option('page_on_front') ;
-	}
-
-	if( $page_id = get_option('page_for_posts') ){
-	echo " страница для записей блога установлена".$page_id;
-	}
-	
-/*--------------------------------------------------------------------------*/	
-	
 	if (is_front_page()) {
 		
         if ($show_on_home == 1) echo '<div class="breadcrumbs"><a href="' . $home_link . '">' . $text['home'] . '</a></div>';
@@ -1321,8 +1316,18 @@ function get_breadcrumbs() {
             echo sprintf($link, $home_link, $text['home']);
             if ($frontpage_id == 0 || $parent_id != $frontpage_id) echo $delimiter;
         }
-
-        if ( is_category() ) {
+		
+		if (is_home() && is_front_page() == 0) {
+			if ($show_current == 1) echo $before .  single_post_title() . $after;
+			
+			
+			
+            
+		} 
+		
+		
+		elseif ( is_category() ) {
+		
             $this_cat = get_category(get_query_var('cat'), false);
             if ($this_cat->parent != 0) {
                 $cats = get_category_parents($this_cat->parent, TRUE, $delimiter);
@@ -1334,32 +1339,56 @@ function get_breadcrumbs() {
             }
             if ($show_current == 1) echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
 
-        } elseif ( is_search() ) {
+        } 
+		
+		elseif ( is_search() ) {
             echo $before . sprintf($text['search'], get_search_query()) . $after;
 
-        } elseif ( is_day() ) {
+        } 
+		
+		elseif ( is_day() ) {
             echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
             echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
             echo $before . get_the_time('d') . $after;
 
-        } elseif ( is_month() ) {
+        } 
+		
+		elseif ( is_month() ) {
             echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
             echo $before . get_the_time('F') . $after;
 
-        } elseif ( is_year() ) {
+        } 
+		
+		elseif ( is_year() ) {
             echo $before . get_the_time('Y') . $after;
 
         } 
+		
 		elseif ( is_single() && !is_attachment() ) {
+		
             if ( get_post_type() != 'post' ) {
+				
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 printf($link, $home_link . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
                 if ($show_current == 1) echo $delimiter . $before . ale_truncate(get_the_title(), 70) . $after;
             } else {
-                $cat = get_the_category(); $cat = $cat[0];
-                $cats = get_category_parents($cat, TRUE, $delimiter);
-                if ($show_current == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
+				if ($post->post_type == 'post') {
+					/*
+					здесь я должен добавить часть кода добовляющяя в ветку имя страницы постов
+					и добавить разделющий значок.
+					*/
+					
+					$posts_page = get_post($page_posts);
+					printf($link, get_permalink($posts_page) , get_the_title($posts_page));
+					if ($show_current == 1) echo $delimiter;
+					
+					
+				}
+                $cat = get_the_category(); 
+				$cat = $cat[0];
+				$cats = get_category_parents($cat, TRUE, $delimiter);
+				if ($show_current == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
                 $cats = str_replace('<a', $link_before . '<a' . $link_attr, $cats);
                 $cats = str_replace('</a>', '</a>' . $link_after, $cats);
                 if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
@@ -1367,11 +1396,16 @@ function get_breadcrumbs() {
                 if ($show_current == 1) echo $before . ale_truncate(get_the_title(), 70) . $after;
             }
 
-        } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+        } 
+		
+		elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+			
             $post_type = get_post_type_object(get_post_type());
             echo $before . $post_type->labels->name . $after;
 
-        } elseif ( is_attachment() ) {
+        } 
+		
+		elseif ( is_attachment() ) {
             $parent = get_post($parent_id);
             $cat = get_the_category($parent->ID); $cat = $cat[0];
             $cats = get_category_parents($cat, TRUE, $delimiter);
@@ -1382,10 +1416,17 @@ function get_breadcrumbs() {
             printf($link, get_permalink($parent), $parent->post_title);
             if ($show_current == 1) echo $delimiter . $before . get_the_title() . $after;
 
-        } elseif ( is_page() && !$parent_id ) {
+        } 
+		
+		
+		elseif ( is_page() && !$parent_id ) {
+		
             if ($show_current == 1) echo $before . get_the_title() . $after;
 
-        } elseif ( is_page() && $parent_id ) {
+        } 
+		
+		elseif ( is_page() && $parent_id ) {
+		
             if ($parent_id != $frontpage_id) {
                 $breadcrumbs = array();
                 while ($parent_id) {
@@ -1402,19 +1443,26 @@ function get_breadcrumbs() {
                 }
             }
             if ($show_current == 1) {
+			
                 if ($show_home_link == 1 || ($parent_id_2 != 0 && $parent_id_2 != $frontpage_id)) echo $delimiter;
                 echo $before . get_the_title() . $after;
             }
 
-        } elseif ( is_tag() ) {
+        } 
+		
+		elseif ( is_tag() ) {
             echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
 
-        } elseif ( is_author() ) {
+        } 
+		
+		elseif ( is_author() ) {
             global $author;
             $userdata = get_userdata($author);
             echo $before . sprintf($text['author'], $userdata->display_name) . $after;
 
-        } elseif ( is_404() ) {
+        } 
+		
+		elseif ( is_404() ) {
             echo $before . $text['404'] . $after;
         }
 

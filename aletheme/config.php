@@ -629,8 +629,8 @@ function aletheme_metaboxes($meta_boxes) {
         )
     );
 	$meta_boxes[] = array(
-        'id'         => 'post_metabox',
-        'title'      => 'Post Options',
+        'id'         => 'post_set_img',
+        'title'      => 'Setting Featured Image',
         'pages'      => array( 'post', ), // Post type
         'context'    => 'normal',
         'priority'   => 'high',
@@ -640,10 +640,14 @@ function aletheme_metaboxes($meta_boxes) {
         'fields' => array(
             
 			array(
-                'name' => __('About', 'aletheme'),
-                'desc' => 'About post',
-                'id'   => $prefix . 'post_type',
-                'type' => 'text',
+                'name' => __('Selects the thumbnail size.', 'aletheme'),
+                'desc' => 'Selects the thumbnail size.',
+                'id'   => $prefix . 'post_thumbnail_size',
+                'type' => 'radio',
+                'options' 	=> array(
+                    array('name'=>'Large size','value'=>'big'),
+                    array('name'=>'Little size','value'=>'little')
+                    )
             ),
 			
 			

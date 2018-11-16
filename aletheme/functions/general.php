@@ -1256,7 +1256,7 @@ function ale_trim_excerpt($length) {
     $words = explode(' ', $text, $excerpt_length + 1);
     if (count($words)> $excerpt_length) {
         array_pop($words);
-        array_push($words, '[&hellip;]');
+        array_push($words, '&hellip;');
         $text = implode(' ', $words);
         $text = apply_filters('the_excerpt',$text);
     }
@@ -1319,13 +1319,8 @@ function get_breadcrumbs() {
 		
 		if (is_home() && is_front_page() == 0) {
 			if ($show_current == 1) echo $before .  single_post_title() . $after;
-			
-			
-			
-            
 		} 
-		
-		
+			
 		elseif ( is_category() ) {
 		
             $this_cat = get_category(get_query_var('cat'), false);

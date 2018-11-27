@@ -380,6 +380,132 @@ function aletheme_metaboxes($meta_boxes) {
 
     $prefix = "ale_";
 
+    $meta_boxes[] = array(
+        'id'         => 'home_page_metabox',
+        'title'      => 'Options page',
+        'pages'      => array( 'page', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        'show_on'    => array( 'key' => 'page-template', 'value' => array('page-home.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+			//*************************************************
+			//			 Our sermons		
+			array(
+                'name' 		=> __('Show Box Sermons', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'sermons_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+			array(
+                'name' => __('Title for sermons', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'sermons_title', 
+				'std'  => 'The generated Lorem Ipsum is therefore always free from',
+                'type' => 'text',
+            ),
+			array(
+                'name' => __('Description  for sermons', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'sermons_desc', 
+				'std'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a' ,
+                'type' => 'textarea_code',
+            ),
+			
+			//**************************************************
+			//			Our People block
+			array(
+                'name' 		=> __('Show People Box', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'people_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+            array(
+                'name' => __('Title for Our People', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'people_title', 
+				'std'  => 'Our people',
+                'type' => 'text',
+            ),
+			array(
+                'name' => __('Description  for Our People', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'people_text', 
+				'std'  => 'Lorem Ipsum is simply dummy tex' ,
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('BG image for Our People', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'people_bg', 
+				'std'  => '',
+                'type' => 'file',
+            ),
+            //**************************************************
+			//			Events
+			array(
+                'name' 		=> __('Show Events Box', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'events_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+            array(
+                'name' => __('Title for Events', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'events_title', 
+				'std'  => '',
+                'type' => 'text',
+            ),
+			array(
+                'name' => __('Description  for Events', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'events_text', 
+				'std'  => '' ,
+                'type' => 'textarea',
+            ),
+            array(
+                'name' => __('Video', 'aletheme'),
+                'desc' => 'Upload or select an video',
+                'id'   => $prefix . 'event_video', 
+				'std'  => '',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('Poster', 'aletheme'),
+                'desc' => 'Poster for video',
+                'id'   => $prefix . 'event_poster', 
+				'std'  => '',
+                'type' => 'file',  
+            ),
+            array(
+                'name' => __('Title for video', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'video_title', 
+				'std'  => '',
+                'type' => 'text',
+            ),
+			array(
+                'name' => __('Description  for video', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'video_text', 
+				'std'  => '' ,
+                'type' => 'textarea',
+            ),
+		)
+    );
 
     $meta_boxes[] = array(
         'id'         => 'contacts_page_metabox',
@@ -648,6 +774,12 @@ function aletheme_metaboxes($meta_boxes) {
                     array('name'=>'Large size','value'=>'big'),
                     array('name'=>'Little size','value'=>'little')
                     )
+            ),
+            array(
+                'name' => __('Profession of the author', 'aletheme'),
+                'desc' => 'Enter profession.',
+                'id'   => $prefix . 'prof_post',
+                'type' => 'text'
             ),
 			
 			

@@ -2,7 +2,141 @@ jQuery(function($) {
     "use strict";
 
     // Custom jQuery Code Here
-	//		Урок 26 мой делаю таймер следующего события для страницы sermons 
+    //  мои движения.. код для плеера.
+    (function player() {
+        var panel = {
+            video:              $('#video'),
+            video_block:        $('.video_section'),
+            videoDOM:           $('#video')[0],
+            playpause_block:    $('#playpause_block'),
+            controls:           $('#controls'),
+            play_but:           $("#controls #playpause_button .fa-play"),
+            pause_but:          $('#controls #playpause_button .fa-pause'),
+            playpause_button:   $('#controls #playpause_button'),
+            total:              $('#total'),
+            progress:           $('#progress'),
+            buffered:           $('#buffered'),
+            current:            $('#current'),
+            currenttime:        $('#currenttime'),
+            duration:           $('#duration'),
+            hasHours:           false,
+            volume_on:          $('.fa-volume-up'),
+            volume_off:         $('.fa-volume-off'),
+            volume:             $(' #volume'),
+
+        };
+        panel.pause_but.addClass('none');
+        panel.volume_off.addClass('none');
+
+
+        function play_pause() {
+            if (panel.videoDOM.paused) {
+                panel.videoDOM.play();
+                panel.playpause_block.toggleClass('none');
+                panel.play_but.toggleClass('none');
+                panel.pause_but.toggleClass('none');
+            }
+            else {
+                panel.videoDOM.pause();
+                panel.playpause_block.toggleClass('none');
+                panel.play_but.toggleClass('none');
+                panel.pause_but.toggleClass('none');
+            }
+        };
+        function hidden_show() {
+            if (panel.videoDOM.paused) {
+
+            }
+            else {
+                $('#video, #controls').on('mouseover',function(event) {
+                    event.stopPropagation();
+                    panel.controls.css('opacity','1.0');
+                });
+                panel.video_block.on('mouseout', function(event) {
+                    event.stopPropagation();
+                    panel.controls.css('opacity','0.0');
+                })
+                
+            } 
+            panel.video.on('ended', function() {
+                $('#video, #controls').off('mouseover');
+                panel.playpause_block.removeClass('none');
+                panel.play_but.removeClass('none');
+                panel.pause_but.addClass('none');
+                panel.controls.css('opacity','0.0');
+                panel.video.one('playing', hidden_show);
+            });
+            
+        };
+        function formatTime(time, hours) {
+            if (hours) {
+                var h = Math.floor(time / 3600);
+                time = time - h * 3600;
+                            
+                var m = Math.floor(time / 60);
+                var s = Math.floor(time % 60);
+                            
+                return h.lead0(2)  + ":" + m.lead0(2) + ":" + s.lead0(2);
+            } else {
+                var m = Math.floor(time / 60);
+                var s = Math.floor(time % 60);
+                            
+                return m.lead0(2) + ":" + s.lead0(2);
+            }
+        }
+                    
+        Number.prototype.lead0 = function(n) {
+            var nz = "" + this;
+            while (nz.length < n) {
+                nz = "0" + nz;
+            }
+            return nz;
+        };
+
+        // ---------------------------
+        //          Events
+        // ---------------------------
+
+        $('#video, #playpause_block, #playpause_button').on('click', play_pause);
+
+        panel.video.one('playing', hidden_show);
+
+        panel.video.on('canplay', function() {
+            panel.hasHours = (panel.videoDOM.duration / 3600) >= 1.0;
+            panel.duration.text(formatTime(panel.videoDOM.duration, panel.hasHours));
+            panel.currenttime.text(formatTime(0, panel.hasHours));
+        });
+
+        panel.video.on('timeupdate', function() {
+            panel.currenttime.text(formatTime(panel.videoDOM.currentTime, panel.hasHours));
+
+            var progress = Math.floor(panel.videoDOM.currentTime) / Math.floor(panel.videoDOM.duration);
+            panel.current.css('width', Math.floor( progress * panel.progress.width()));
+        });
+
+        panel.video.on('progress',function() {
+            if (panel.videoDOM.buffered.length) {
+                var buffered = Math.floor(panel.videoDOM.buffered.end(0)) / Math.floor(panel.videoDOM.duration);
+                panel.buffered.css('width', Math.floor(buffered * panel.progress.width()));
+                
+            }
+        });
+
+        panel.progress.on('click',function(e) {
+            var x = (e.pageX -panel.progress.offset().left) / $(panel.progress).width();
+            panel.videoDOM.currentTime = x * panel.videoDOM.duration;
+        });
+
+
+        panel.volume.on('click', function() {
+            panel.videoDOM.muted = ! panel.videoDOM.muted;
+            panel.volume_on.toggleClass('none');
+            panel.volume_off.toggleClass('none');
+        });
+    }());
+    
+    
+    //		Урок 26 мой делаю таймер следующего события для страницы sermons 
 	
 	setInterval(timer, 1000);
 	

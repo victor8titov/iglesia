@@ -1045,6 +1045,269 @@ html[xmlns] .slides {
   max-width: 100%;
   height: auto;
 }
+/*   home 		*/
+.none {
+  display: none !important;
+}
+.content_page_home .content_page_home {
+  padding-top: 40px;
+  text-align: center !important;
+  font-size: 14px;
+}
+.content_page_home .our_sermons h2 {
+  font-size: 44px;
+  color: #804258;
+  margin-top: 65px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.content_page_home .our_sermons p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #a3a3a3;
+  text-align: center;
+}
+.content_page_home .our_sermons p:first-of-type {
+  font-size: 12px;
+  margin-bottom: 56px;
+}
+.content_page_home .our_sermons .sermons_list {
+  padding-bottom: 48px;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 60px;
+}
+.content_page_home .our_sermons .next_sermons {
+  margin-top: 62px;
+  margin-bottom: 80px;
+}
+.content_page_home .events {
+  margin-top: 85px;
+}
+.content_page_home .events .events_section {
+  width: 225px;
+  float: left;
+}
+.content_page_home .events .events_section h3 {
+  font-size: 24px;
+  color: #804258;
+  margin-bottom: 30px;
+}
+.content_page_home .events .events_section ul {
+  margin-bottom: 18px;
+}
+.content_page_home .events .events_section ul li {
+  position: relative;
+  width: 177px;
+  border-bottom: 1px solid #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 44px;
+  color: #a3a3a3;
+  transition: all 300ms ease-in-out;
+}
+.content_page_home .events .events_section ul li:hover {
+  color: #7f4258;
+  cursor: pointer;
+}
+.content_page_home .events .events_section ul li:before {
+  content: ".";
+  position: absolute;
+  left: -15px;
+  top: -6px;
+  color: #fce374;
+  font-size: 20px;
+}
+.content_page_home .events .events_section a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b3b3b3;
+  font-size: 11px;
+  line-height: 24px;
+}
+.content_page_home .events .events_section a:after {
+  content: ">";
+}
+.content_page_home .events .video_section {
+  float: left;
+  margin-left: 20px;
+  position: relative;
+  width: 470px;
+  height: 296px;
+}
+.content_page_home .events .video_section #playpause_block {
+  position: absolute;
+  left: 58px;
+  top: 108px;
+  width: 355px;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: all 300ms ease-in-out;
+}
+.content_page_home .events .video_section #playpause_block:hover {
+  background-color: rgba(216, 216, 216, 0.8);
+  cursor: pointer;
+}
+.content_page_home .events .video_section #playpause_block:hover .icon {
+  background-color: rgba(255, 239, 167, 0.8);
+}
+.content_page_home .events .video_section #playpause_block .icon {
+  border-radius: 5px 0px 0px 5px;
+  float: left;
+  background-color: #ffefa7;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+.content_page_home .events .video_section #playpause_block .icon .fa-play {
+  transition: all 400ms ease-in-out;
+  color: #7f4258;
+  font-size: 29px;
+  line-height: 80px;
+}
+.content_page_home .events .video_section #playpause_block .info {
+  box-sizing: border-box;
+  float: left;
+  width: 271px;
+  padding-top: 23px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content_page_home .events .video_section #playpause_block .info .title {
+  font-size: 11px;
+  color: #a3a3a3;
+  display: block;
+}
+.content_page_home .events .video_section #playpause_block .info .content {
+  font-size: 18px;
+  color: #000;
+  display: block;
+}
+.content_page_home .events .video_section #controls {
+  position: absolute;
+  opacity: 0.0;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  background-color: #9c9c9c;
+  transition: all 300ms ease-in-out;
+}
+.content_page_home .events .video_section #controls #playpause_button {
+  width: 35px;
+  display: block;
+  float: left;
+  text-align: center;
+}
+.content_page_home .events .video_section #controls #playpause_button .fa-play,
+.content_page_home .events .video_section #controls #playpause_button .fa-pause {
+  color: #2e2e2e;
+  font-size: 18px;
+  line-height: 25px;
+  transition: all 300ms ease-in-out;
+}
+.content_page_home .events .video_section #controls #progress {
+  width: 400px;
+  display: block;
+  float: left;
+}
+.content_page_home .events .video_section #controls #progress #total {
+  width: 100%;
+}
+.content_page_home .events .video_section #controls #progress #total #buffered {
+  height: 25px;
+  background-color: #dbdbdb;
+  width: 0px;
+  display: inline-block;
+}
+.content_page_home .events .video_section #controls #progress #total #buffered #current {
+  height: 25px;
+  display: inline-block;
+  background-color: #5f5f5f;
+  width: 0px;
+}
+.content_page_home .events .video_section #controls #time {
+  position: absolute;
+  left: 74%;
+  top: 0;
+  line-height: 25px;
+}
+.content_page_home .events .video_section #controls #volume {
+  width: 27px;
+  display: block;
+  float: left;
+  line-height: 25px;
+  text-align: right;
+  padding-right: 8px;
+}
+.content_page_home .events .people_say_section {
+  width: 194px;
+  float: left;
+  margin-left: 51px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content_page_home .events .people_say_section h3 {
+  font-size: 24px;
+  color: #804258;
+}
+.content_page_home .events .people_say_section img {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  float: left;
+  margin-right: 20px;
+}
+.content_page_home .events .people_say_section .title {
+  float: left;
+  font-size: 12px;
+  line-height: 24px;
+  color: #000;
+  text-transform: none;
+  font-family: Arial;
+  font-weight: bold;
+  padding-right: 26px;
+  margin-bottom: 0;
+}
+.content_page_home .events .people_say_section .prof_autor {
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  color: #b3b3b3;
+}
+.content_page_home .events .people_say_section .content {
+  font-size: 12px;
+  line-height: 20px;
+  color: #a3a3a3;
+}
+.content_page_home .events .people_say_section .content:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content_page_home .events .people_say_section .content p {
+  margin-top: 30px;
+}
+.content_page_home .events .people_say_section a {
+  font-size: 11px;
+  line-height: 24px;
+  color: #a3a3a3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content_page_home .events .people_say_section a:after {
+  content: ">";
+}
+.content_page_home .events .info_section {
+  width: 100%;
+  margin-top: 72px;
+  border-top: 1px solid #f2f2f2;
+}
+.content_page_home .events .info_section:before {
+  content: "";
+  display: table;
+  clear: both;
+}
 /*						------------------- footer --------------------- */
 footer.main-footer {
   min-height: 470px;
@@ -1533,9 +1796,14 @@ footer.main-footer .bottom_footer .footer_social i {
 .pagination .left_arrow a,
 .pagination .right_arrow a {
   color: inherit;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
-.transition(all 300ms ease-in-out) .pagination .left_arrow a:hover,
-.transition(all 300ms ease-in-out) .pagination .right_arrow a:hover {
+.pagination .left_arrow a:hover,
+.pagination .right_arrow a:hover {
   -moz-opacity: 0.7;
   -khtml-opacity: 0.7;
   -webkit-opacity: 0.7;
@@ -2046,7 +2314,8 @@ footer.main-footer .bottom_footer .footer_social i {
   -o-transition: all 1 0ms ease-in-out;
   transition: all 1 0ms ease-in-out;
 }
-.ale_about_page .content {
+.ale_about_page .content,
+.people .content {
   -webkit-column-count: 2;
   /* Chrome, Safari, Opera */
   -moz-column-count: 2;
@@ -2061,26 +2330,30 @@ footer.main-footer .bottom_footer .footer_social i {
   font-size: 14px;
   line-height: 24px;
 }
-.ale_about_page .content p {
+.ale_about_page .content p,
+.people .content p {
   text-align: justify;
   color: #a3a3a3;
   font-size: 14px;
   line-height: 24px;
 }
-.ale_about_page .info_box {
+.ale_about_page .info_box,
+.people .info_box {
   margin: 80px 0;
   padding: 80px;
   background-size: cover;
   background-attachment: fixed;
 }
-.ale_about_page .info_box .center_block {
+.ale_about_page .info_box .center_block,
+.people .info_box .center_block {
   max-width: 660px;
   margin: 0 auto;
   background: #7f4258;
   box-sizing: border-box;
   padding: 60px 100px 40px 100px;
 }
-.ale_about_page .info_box .center_block h3.info_title {
+.ale_about_page .info_box .center_block h3.info_title,
+.people .info_box .center_block h3.info_title {
   color: #ffefa7;
   text-transform: none;
   text-align: center;
@@ -2088,7 +2361,8 @@ footer.main-footer .bottom_footer .footer_social i {
   line-height: 32px;
   margin-bottom: 25px;
 }
-.ale_about_page .info_box .center_block .description {
+.ale_about_page .info_box .center_block .description,
+.people .info_box .center_block .description {
   color: #fff;
   font-size: 12px;
   line-height: 24px;
@@ -2096,43 +2370,51 @@ footer.main-footer .bottom_footer .footer_social i {
   display: inline-block;
   margin-bottom: 35px;
 }
-.ale_about_page .info_box .center_block .divider {
+.ale_about_page .info_box .center_block .divider,
+.people .info_box .center_block .divider {
   width: 100%;
   max-width: 130px;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0 auto;
 }
-.ale_about_page .services_items {
+.ale_about_page .services_items,
+.people .services_items {
   margin-bottom: 80px;
 }
-.ale_about_page .services_items .services_list {
+.ale_about_page .services_items .services_list,
+.people .services_items .services_list {
   display: flex;
   justify-content: space-between;
 }
-.ale_about_page .services_items .services_list .serv_item {
+.ale_about_page .services_items .services_list .serv_item,
+.people .services_items .services_list .serv_item {
   width: calc(25% - 45px);
 }
-.ale_about_page .services_items .services_list .serv_item p {
+.ale_about_page .services_items .services_list .serv_item p,
+.people .services_items .services_list .serv_item p {
   color: #a3a3a3;
   margin-bottom: 0;
   font-size: 12px;
   line-height: 24px;
 }
-.ale_about_page .services_items .services_list .serv_item .icon_box {
+.ale_about_page .services_items .services_list .serv_item .icon_box,
+.people .services_items .services_list .serv_item .icon_box {
   width: 100%;
   height: 35px;
   text-align: left;
   margin-bottom: 30px;
 }
-.ale_about_page .our_people {
+.ale_about_page .our_people,
+.people .our_people {
   background: #5a1830;
   position: relative;
   z-index: 0;
   padding-top: 65px;
   padding-bottom: 65px;
 }
-.ale_about_page .our_people .bg_people_mask {
+.ale_about_page .our_people .bg_people_mask,
+.people .our_people .bg_people_mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -2145,12 +2427,14 @@ footer.main-footer .bottom_footer .footer_social i {
   z-index: -1;
   background-size: cover;
 }
-.ale_about_page .our_people .top_tittle {
+.ale_about_page .our_people .top_tittle,
+.people .our_people .top_tittle {
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
 }
-.ale_about_page .our_people .top_tittle .left_arrow .left {
+.ale_about_page .our_people .top_tittle .left_arrow .left,
+.people .our_people .top_tittle .left_arrow .left {
   width: 45px;
   height: 45px;
   display: block;
@@ -2172,29 +2456,34 @@ footer.main-footer .bottom_footer .footer_social i {
   transition: all 300ms ease-in-out;
   cursor: pointer;
 }
-.ale_about_page .our_people .top_tittle .left_arrow .left:hover {
+.ale_about_page .our_people .top_tittle .left_arrow .left:hover,
+.people .our_people .top_tittle .left_arrow .left:hover {
   border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
-.ale_about_page .our_people .top_tittle .center_info {
+.ale_about_page .our_people .top_tittle .center_info,
+.people .our_people .top_tittle .center_info {
   text-align: center;
   margin-left: 38px;
   margin-right: 38px;
 }
-.ale_about_page .our_people .top_tittle .center_info h3.people_title {
+.ale_about_page .our_people .top_tittle .center_info h3.people_title,
+.people .our_people .top_tittle .center_info h3.people_title {
   color: #ffefa7;
   font-size: 44px;
   text-transform: none;
   margin-bottom: 20px;
   line-height: 44px;
 }
-.ale_about_page .our_people .top_tittle .center_info span.people_desc {
+.ale_about_page .our_people .top_tittle .center_info span.people_desc,
+.people .our_people .top_tittle .center_info span.people_desc {
   display: inline-block;
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
   line-height: 24px;
 }
-.ale_about_page .our_people .top_tittle .right_arrow .right {
+.ale_about_page .our_people .top_tittle .right_arrow .right,
+.people .our_people .top_tittle .right_arrow .right {
   width: 45px;
   height: 45px;
   display: block;
@@ -2216,18 +2505,21 @@ footer.main-footer .bottom_footer .footer_social i {
   transition: all 300ms ease-in-out;
   cursor: pointer;
 }
-.ale_about_page .our_people .top_tittle .right_arrow .right:hover {
+.ale_about_page .our_people .top_tittle .right_arrow .right:hover,
+.people .our_people .top_tittle .right_arrow .right:hover {
   border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
-.ale_about_page .our_people .peoples_list .item_people {
+.ale_about_page .our_people .peoples_list .item_people,
+.people .our_people .peoples_list .item_people {
   background: url(img/bottom.png);
   margin: 10px;
   position: relative;
   min-height: 87px;
   cursor: pointer;
 }
-.ale_about_page .our_people .peoples_list .item_people .mask_hover {
+.ale_about_page .our_people .peoples_list .item_people .mask_hover,
+.people .our_people .peoples_list .item_people .mask_hover {
   background: #fff;
   display: flex;
   justify-content: flex-start;
@@ -2243,11 +2535,13 @@ footer.main-footer .bottom_footer .footer_social i {
   top: 0;
   left: 0;
 }
-.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info {
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info,
+.people .our_people .peoples_list .item_people .mask_hover .people_info {
   margin-left: 20px;
   margin-right: 20px;
 }
-.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info h4.name {
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info h4.name,
+.people .our_people .peoples_list .item_people .mask_hover .people_info h4.name {
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -2256,14 +2550,16 @@ footer.main-footer .bottom_footer .footer_social i {
   line-height: 14px;
   margin-bottom: 10px;
 }
-.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info span.post {
+.ale_about_page .our_people .peoples_list .item_people .mask_hover .people_info span.post,
+.people .our_people .peoples_list .item_people .mask_hover .people_info span.post {
   color: #b3b3b3;
   font-size: 11px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 11px;
   display: inline-block;
 }
-.ale_about_page .our_people .peoples_list .item_people:hover .mask_hover {
+.ale_about_page .our_people .peoples_list .item_people:hover .mask_hover,
+.people .our_people .peoples_list .item_people:hover .mask_hover {
   margin-top: -10px;
   margin-left: -10px;
 }

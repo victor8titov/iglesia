@@ -488,6 +488,317 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
 	 	}
 	}
 }
+/*   home 		*/
+.none {
+    display: none !important;
+}
+.content_page_home {
+	.content_page_home {
+		padding-top: 40px;
+		text-align: center !important;
+		font-size: 14px;
+	}
+	.our_sermons {
+		
+		h2 {
+			font-size: 44px;
+			color: @hover_color;
+			margin-top: 65px;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			color: #a3a3a3;
+			text-align: center;
+		}
+		p:first-of-type {
+			font-size: 12px;
+			margin-bottom: 56px;
+			
+		}
+		.sermons_list {
+			padding-bottom: 48px;
+			border-bottom: 1px solid #f2f2f2;
+			margin-bottom: 60px;
+		}
+		.next_sermons {
+			margin-top: 62px;
+			margin-bottom: 80px;
+		}
+		
+	}
+	.events {
+		margin-top: 85px;
+		.events_section {
+			
+			width: 225px;
+			float: left;
+			
+			h3 {
+				font-size: 24px;
+				color: @hover_color;
+				margin-bottom: 30px;
+			}
+			ul {
+				margin-bottom: 18px;
+				li {
+					position: relative;
+					width: 177px;
+					border-bottom: 1px solid #f2f2f2;
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: 12px;
+					line-height: 44px;
+					color: #a3a3a3;
+					transition: all 300ms ease-in-out;
+					&:hover {
+						color: #7f4258;
+						cursor: pointer;
+					}
+				}
+				
+				li:before {
+					content: ".";
+					position: absolute;
+					left: -15px;
+					top: -6px;
+					color: #fce374;
+					font-size: 20px;
+				}
+			}
+			a {
+				font-family: Arial, Helvetica, sans-serif;
+				color: #b3b3b3;
+				font-size: 11px;
+				line-height: 24px;
+				
+				&:after {
+					content: ">";
+				}
+			}
+		}
+		.video_section {
+			float: left;
+			margin-left: 20px;
+			position: relative;
+			width: 470px;
+			height: 296px;
+			#video {
+				
+				
+				
+			}
+			#playpause_block {
+				position: absolute;
+				
+				left: 58px;
+				top: 108px;
+				width: 355px;
+				border-radius: 6px;
+				background-color: #fff;
+				transition: all 300ms ease-in-out;
+				&:hover {
+					background-color: rgba(216, 216, 216, 0.8);
+					cursor: pointer;
+					.icon {
+						background-color: rgba(255, 239, 167, 0.8);
+						
+					}
+				
+				}
+				.icon {
+					border-radius: 5px 0px 0px 5px;
+					float: left;
+					background-color: #ffefa7;
+					width: 80px;
+					height: 80px;
+					text-align: center;
+					.fa-play {
+						transition: all 400ms ease-in-out;
+						color: #7f4258;
+						font-size: 29px;
+						line-height: 80px;
+					}
+					
+				
+				}
+				.info {
+					box-sizing: border-box;
+					float: left;
+					width: 271px;
+					padding-top: 23px;
+					padding-left: 15px;
+					
+					font-family: Arial, Helvetica, sans-serif;
+					.title {
+						
+						font-size: 11px;
+						color: #a3a3a3;
+						display: block;
+					}
+					.content {
+						font-size: 18px;
+						color: #000;
+						display: block;
+					}
+				}
+			}
+			#controls {
+				position: absolute;
+				opacity: 0.0;
+				bottom: 0;
+				left: 0;
+				height: 25px;
+				background-color: #9c9c9c;
+				transition: all 300ms ease-in-out;
+				#playpause_button {
+					width: 35px;
+					display: block;
+					float: left;
+					text-align: center;
+					
+					.fa-play, .fa-pause {
+						color: rgb(46, 46, 46);
+						font-size: 18px;
+						line-height: 25px;
+						transition: all 300ms ease-in-out;
+					}
+					
+					
+					
+				}
+				#progress {
+					width: 400px;
+					
+					display: block;
+					float: left;
+					
+					#total {
+						width: 100%;
+						#buffered{
+							height: 25px;
+							background-color: rgb(219, 219, 219); 
+							width: 0px;
+							display: inline-block;
+							#current{
+								height: 25px;
+								display: inline-block;
+								background-color: rgb(95, 95, 95); 
+								width: 0px;
+								
+							}
+							
+						}
+						
+					}
+				}
+				#time {
+					position: absolute;
+					left: 74%;
+					top: 0;
+					line-height: 25px;
+					#currenttime {
+						
+					}
+					#duration {
+
+					}
+				}
+				#volume {
+					width: 27px;
+					display: block;
+					float: left;
+					line-height: 25px;
+					text-align: right;
+					padding-right: 8px;
+					.fa-volume-up {
+
+					}
+					.fa-volume-off {
+
+					}
+				}
+			}
+
+
+			
+		}
+		.people_say_section {
+			width: 194px;
+			float: left;
+			margin-left: 51px;
+			font-family: Arial, Helvetica, sans-serif;
+			h3 {
+				font-size: 24px;
+				color: #804258;
+			}
+			img {
+				width: 50px;
+				height: 50px;
+				.rounded(5px);
+				float: left;
+				margin-right: 20px;
+			}
+			.title {
+				float: left;
+				font-size: 12px;
+				line-height: 24px;
+				color: #000;
+				text-transform: none;
+				font-family: Arial;
+				font-weight: bold;
+				padding-right: 26px;
+    			margin-bottom: 0;
+			}
+			.prof_autor {
+				float: left;
+				font-size:12px;
+				line-height: 18px;
+				color: #b3b3b3;
+				
+			}
+			.content {
+				
+				font-size: 12px;
+				line-height: 20px;
+				color: #a3a3a3;
+				&:before {
+					content: "";
+					display: table;
+					clear: both;
+				}
+				p {
+					margin-top: 30px;
+				}
+
+			}
+			a {
+				font-size: 11px;
+				line-height: 24px;
+				color: #a3a3a3;
+				font-family: Arial, Helvetica, sans-serif;
+				&:after {
+					content: ">";
+				}
+			}
+		}
+		.info_section {
+			width: 100%;
+			margin-top: 72px;
+			border-top: 1px solid #f2f2f2;
+			&:before {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.desc {}
+			.title {}
+		}
+	
+	}
+}
+
 
 
 
@@ -948,7 +1259,7 @@ footer.main-footer {
 		margin:0 80px;
 		a {
 			color: inherit;
-			.transition(all 300ms ease-in-out)
+			.transition(all 300ms ease-in-out);
 			
 			&:hover {
 				.opacity(0.7);
@@ -1435,7 +1746,7 @@ footer.main-footer {
 }
 //*********************************************************
 //				Pages About style
-.ale_about_page {
+.ale_about_page , .people{
 	.content {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
    	 	-moz-column-count: 2; /* Firefox */

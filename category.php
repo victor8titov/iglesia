@@ -1,121 +1,95 @@
 <?php get_header(); ?>
     <!-- Content -->
-    <div class="blog-center-align">
+<div class="ale_blog_page">
+<h2 class = "blog_page_title">Blog</h2>
+<!-- ----------------------------------------------------------- -->  
+<!-- 						Blog Content 						-->
+        <div class="blog-content cf">
+            <?php 
+			global $query_string;
+			query_posts($query_string . '&posts_per_page=8');
+			
+			if (have_posts()) : while (have_posts()) : the_post(); ?>
+               
+			   <!-- Blog Item -->
+			  
+				<div class="blog-item <?php if (has_post_thumbnail()) { echo ale_get_meta('post_thumbnail_size');}; ?>">
+					<?php if (has_post_thumbnail()): ?>
+						<div class = "img-post">
+							<a href="<?php the_permalink(); ?>" >
+								<?php if (ale_get_meta('post_thumbnail_size') === 'big'): ?>
+									<?php echo get_the_post_thumbnail($post->ID,'post-bigbox'); ?>
+								<?php elseif (ale_get_meta('post_thumbnail_size') === 'little'): ?>
+									<?php echo get_the_post_thumbnail($post->ID,'post-minibox'); ?>
+								<?php endif; ?>
+							</a>
+						</div>
+					<? endif; ?>
+						
+					<div class="item-content">
+						<?php the_category(); ?>
+						<h2 class="title"><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h2>
+						<div class="content">
+							<?php if (ale_get_meta('post_thumbnail_size') === 'big' && has_post_thumbnail()): ?>	
+							<?php echo ale_trim_excerpt('100'); ?>
+							<?php else: ?>
+							<?php echo ale_trim_excerpt('22'); ?>
+							<?php endif ?>
+						</div>
+					</div>
 
-        <!-- Blog Caption -->
-        <div class="blog-caption">
-            <div class="blogtitle"><?php echo single_cat_title("", false); ?></div>
-        </div>
-
-        <!-- Blog Line -->
-        <div class="blog-line"></div>
-
-        <!-- Filters Here -->
-        <ul class="blog-filter-line">
-            <li><?php _e('Filter By','aletheme'); ?>:</li>
-            <li>
-                <a class="filter-caption"><p><?php _e('Author','aletheme'); ?></p><span></span></a>
-                <ul>
-
-                    <?php
-                    $args = array(
-                        'orderby'       => 'name',
-                        'order'         => 'ASC',
-                        'number'        => null,
-                        'optioncount'   => false,
-                        'exclude_admin' => false,
-                        'show_fullname' => false,
-                        'hide_empty'    => true,
-                        'echo'          => true,
-                        'style'         => 'list',
-                        'html'          => true );
-
-                    wp_list_authors($args); ?>
-                </ul>
-
-            </li>
-
-            <li>
-                <a class="filter-caption"><p><?php _e('Category','aletheme'); ?></p><span></span></a>
-                <ul>
-                    <?php
-                    $args = array(
-                        'show_option_all'    => '',
-                        'orderby'            => 'name',
-                        'order'              => 'ASC',
-                        'style'              => 'list',
-                        'show_count'         => 0,
-                        'hide_empty'         => 1,
-                        'use_desc_for_title' => 1,
-                        'child_of'           => 0,
-                        'feed'               => '',
-                        'feed_type'          => '',
-                        'feed_image'         => '',
-                        'exclude'            => '',
-                        'exclude_tree'       => '',
-                        'include'            => '',
-                        'hierarchical'       => 1,
-                        'title_li'           => '',
-                        'show_option_none'   => __('No categories','aletheme'),
-                        'number'             => null,
-                        'echo'               => 1,
-                        'depth'              => 0,
-                        'current_category'   => 0,
-                        'pad_counts'         => 0,
-                        'taxonomy'           => 'category',
-                        'walker'             => null
-                    );
-                    wp_list_categories($args); ?>
-                </ul>
-            </li>
-
-            <li>
-                <a class="filter-caption"><p><?php _e('Tags','aletheme'); ?></p><span></span></a>
-                <?php
-                $tags = get_tags();
-                $html = '<ul>';
-                foreach ( $tags as $tag ) {
-                    $tag_link = get_tag_link( $tag->term_id );
-
-                    $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-                    $html .= "{$tag->name}</a></li>";
-                }
-                $html .= '</ul>';
-                echo $html;
-                ?>
-            </li>
-
-            <li class="search">
-                <form role="search" method="get" id="searchform" action="<?php echo site_url()?>" >
-                    <input type="search" class="searchinput" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php _e('SEARCH', 'aletheme')?>" />
-                    <button type="submit" id="searchsubmit"></button>
-                </form>
-            </li>
-        </ul>
-
-        <!-- Blog Content -->
-        <div class="blog-content">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php ale_part('postpreview' );?>
+					<div class = "date_comment_info">
+							<span class = "comments"><?php comments_number('0 ','1','% '); ?><i class="fa fa-comment" aria-hidden="true"></i></span> 
+							<span class = "heart"><i class="fa fa-heart " aria-hidden="true"></i></span>
+							<span class = "date"><?php echo get_the_date('d M Y'); ?></span>
+					</div>
+				</div>
+  				<!-- end Blog Item -->
+			   
             <?php endwhile; else: ?>
                 <?php ale_part('notfound')?>
             <?php endif; ?>
+            <?php wp_reset_query(); ?>
         </div>
 
-        <!-- Blog Nav  -->
-        <div class="blog-nav">
-            <span class="left"><?php echo get_previous_posts_link(__('&lt; Newer Posts','aletheme')); ?></span>
-            <span class="right"><?php echo get_next_posts_link(__('Older Posts &gt;','aletheme')); ?></span>
-            <div class="center"><?php _e('page','aletheme'); ?> <?php echo $paged; ?> <?php _e('of','aletheme'); ?> <?php echo $wp_query->max_num_pages; ?></div>
-        </div>
+<!-- ----------------------------------------------------------- -->        
+<!-- 					pagination  							 -->
+       <?php global $wp_query;
+		 	if ($wp_query->max_num_pages > 1) 
+			{ ?>
+      
+         <div class="pagination">
+         	<div class="left_arrow">
+         		<?php 
+					if (get_previous_posts_link())	{
+						echo get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>');
+						} 
+						else {
+						echo '<i class="fa fa-angle-left" aria-hidden="true"></i>';
+						}
+						?>
+         	</div>
+         	
+         	<div class="paginate_items">
+         		<?php ale_page_links(); ?>
+         	</div>
+         	
+         	<div class="right_arrow">
+         		<?php 
+					if (get_next_posts_link()) {
+						echo get_next_posts_link('<i class="fa fa-angle-right" aria-hidden="true"></i>');}
+						else {
+							echo '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+						}
+						?>
+         	</div>
+		</div>  
+	<?php } ?>
 
-        <!-- Blog Nav -->
-        <div class="blog-line"></div>
+        
 
-        <!-- Blog Footer  -->
-        <div class="blog-footer">
-            <?php ale_part('archives'); ?>
-        </div>
-
-    </div>
+        
+</div>
+    
+    
 <?php get_footer(); ?>

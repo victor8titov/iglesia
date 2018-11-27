@@ -25,3 +25,15 @@ if ( is_readable($locale_file) )
  * If you want to add custom functions you should do manual
  * updates only.
  ****************************************************************/
+
+// Функция режит загловок
+ function ale_trim_title($count, $after) {
+    $title = get_the_title();
+    $words = split(' ', $title);
+    if (count($words) > $count) {
+      array_splice($words, $count);
+      $title = implode(' ', $words);
+    }
+    else $after = '';
+    echo $title . $after;
+  }

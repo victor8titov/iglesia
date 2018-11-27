@@ -8,7 +8,7 @@
 			if (time() <= ale_get_meta('sermons_date') ) { ?>
 			<div class = "next_sermon">
  				<div class = "mask_sermon">
-					<arcticle class = "next_item_sermon cf"> 
+					<article class = "next_item_sermon cf"> 
 							<div class="next_seremon_info">
 								<p class="text_next">Next sermony:</p>
 								<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h4>
@@ -17,7 +17,7 @@
 							</div>
 							<?php echo get_the_post_thumbnail($post->ID,'sermons-biglist'); ?>
 
-					</arcticle>
+					</article>
 				</div>
  			</div>
 			 <?php } ?>
@@ -28,14 +28,16 @@
  	<!--			МОДУЛЬ С ПРОШЕДШИМИ sermons		-->
  	<!--********************************************************-->
  	<div class = "sermons_list">
- 		<?php 
+ 		
+		 
+		 <?php 
 		
 		global $query_string;
 		query_posts($query_string . '&posts_per_page=9');
 		
 		if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
-			<arcticle class = "item_sermon"> 
+			<article class = "item_sermon"> 
 				
 					<?php echo get_the_post_thumbnail($post->ID,'sermons-list'); ?>
 					<h3><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 8, '...'); ?> </a></h3>
@@ -43,7 +45,7 @@
 						<?php echo date( "d M Y", (int)ale_get_meta('sermons_date')); ?>	
 					</span>
 				
-			</arcticle>
+			</article>
 			   
 		<?php endwhile; endif; ?>
  		<?php wp_reset_query(); ?>

@@ -198,6 +198,31 @@ jQuery(function($) {
 		  prevArrow: '.left_arrow .left'
 
 		});
+    };
+    
+    // 	Урок my для работы слайдера на страницы home-page.php work slider our blog
+	if ($(window).slick) { 
+		$('.blog_list').slick({
+		  infinite: true,
+		  slidesToShow: 4,
+		  slidesToScroll: 4,
+		  nextArrow: '.right_arrow_blog .right_blog',
+		  prevArrow: '.left_arrow_blog .left_blog'
+
+		});
+    }
+    if ($(window).slick) { 
+		$('.gallery_list').slick({
+		  infinite: true,
+		  slidesToShow: 4,
+          slidesToScroll: 4,
+          autoplay: true,
+          variableWidth: false,
+          autoplaySpeed: 4000,
+		  nextArrow: '',
+		  prevArrow: '',
+
+		});
 	}
 	
 		

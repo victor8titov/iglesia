@@ -15,7 +15,7 @@
 			  
 				<div class="blog-item <?php if (has_post_thumbnail()) { echo ale_get_meta('post_thumbnail_size');}; ?>">
 					<?php if (has_post_thumbnail()): ?>
-						<div class = "img-post">
+						<div class = "img-post"> 
 							<a href="<?php the_permalink(); ?>" >
 								<?php if (ale_get_meta('post_thumbnail_size') === 'big'): ?>
 									<?php echo get_the_post_thumbnail($post->ID,'post-bigbox'); ?>

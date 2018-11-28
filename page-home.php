@@ -30,14 +30,19 @@ get_header(); ?>
 		</ul>
 	</div>
 </section>
-<div class = " content_page_home wrapper">
+<div class = " content_page_home">
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
-	<p class = "content_page_home"><?php echo the_content();?></p>
+	<p class = "content_page"><?php echo the_content();?></p>
+	<?php endwhile;?>
+<?php endif; ?>
+
+
+
 	<!--**************************************************************
 							Section Our Sermons
 		***************************************************************-->
 	<?php if (ale_get_meta('sermons_display') === 'show'): ?>						
-	<section class = "our_sermons">
+	<section class = "our_sermons wrapper">
 		<h2>Our sermons</h2>
 		<p><?php ale_meta('sermons_title'); ?></p>
 
@@ -155,7 +160,7 @@ get_header(); ?>
 							EVENTS
 		***************************************************************-->
 	<?php if (ale_get_meta('events_display') === 'show'):?>
-		<section class = "events">
+		<section class = "events wrapper">
 			<div class = "events_section">
 				<h3 >Events</h3>
 				<ul>
@@ -165,7 +170,7 @@ get_header(); ?>
 						$myposts = get_posts($args);
 						foreach($myposts as $post): setup_postdata($post); ?>
 						<li>
-							<?php echo wp_trim_words(get_the_title(),4); ?>
+							<a href = "<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(),4); ?></a>
 						</li>	
 				
 					<?php endforeach; ?>
@@ -235,19 +240,116 @@ get_header(); ?>
 	<!--**************************************************************
 							OUR BLOG
 		***************************************************************-->
-	<section class = "our_blog"></section>
+	<?php if(ale_get_meta('blog_display') === 'show'): ?>
+	<section class = "our_blog">		
+		
+		
+		<div class="bg_blog_mask" <?php if(ale_get_meta('blog_bg')) { echo 'style="background-image:url('.ale_get_meta('blog_bg').');"'; }; ?>>
+		</div> 
+		
+			
+			<div class="top_tittle">
+				<div class="left_arrow_blog">
+					<span class="left_blog">
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+					</span>
+				</div>
+				<div class="center_info">
+					<h3 class="blog_title">Our blog</h3>
+					<span class="blog_desc">Lorem Ipsum is simply dummy tex</span>
+				</div>
+				<div class="right_arrow_blog">
+					<span class="right_blog">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
+
+		
+			<div class="blog_list ">
+			<?php 
+				$args = array('post_type' => 'post',
+							'numberposts' => -1,
+							'category_name' => 'events');
+				$myposts = get_posts($args);
+				foreach($myposts as $post): setup_postdata($post) ?>
+					<div class="item_blog">
+						<div class="mask_hover">
+							<div class="blog-item">
+								<div class="item-content">
+									<?php the_category(); ?>
+									<h2 class="title"><a href="<?php the_permalink(); ?>" ><?php echo wp_trim_words(get_the_title(),4); ?></a></h2>
+									<div class="content">
+										<?php echo ale_trim_excerpt('18'); ?>											
+									</div>
+								</div>
+								<div class = "date_comment_info">
+									<span class = "comments"><?php comments_number('0 ','1','% '); ?><i class="fa fa-comment" aria-hidden="true"></i></span> 
+									<span class = "heart"><i class="fa fa-heart " aria-hidden="true"></i></span>
+									<span class = "date"><?php echo get_the_date('d M Y'); ?></span>
+								</div>
+							</div>					
+							
+						<!-- end Blog Item -->
+						</div>
+					</div>						
+			<?php endforeach;  ?>
+			<?php wp_reset_postdata(); ?>							
+			</div>
+	</section>
+	<?php endif; ?>
 
 	<!--**************************************************************
 							DONATION
 		***************************************************************-->
-	<section class = "donation"></section>
-
+	<?php if(ale_get_meta('donation_display') === 'show'): ?>
+	<section class = "donation wrapper ">
+		<div class = "info">
+			<h4>Donation</h4>
+			<span class = "title">Lorem Ipsum is simply dummy text
+			</span>
+			<a href = "" class = "link">Donate</a>
+		</div>
+		<div class = "quote">
+			<p class = "duble">
+				&#8220;			
+			</p>
+			<p class = "quote_">
+			It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and 
+			</p>
+			<p class = "avtor">
+			- Steeave Jonez
+			</p>
+		</div>
+	</section>
+	<?php endif; ?>
 	<!--**************************************************************
 							GALLeRY
 		***************************************************************-->	
-	<section class = "gallery"></section>	
-<?php endwhile;?>
-<?php endif; ?>
+	<?php if(ale_get_meta('gallery_display') === 'show'): ?>
+	<section class = "gallery">
+		<div class="gallery_list ">
+		<?php 
+			$args = array('post_type' => 'gallery',
+						'numberposts' => -1);
+			$myposts = get_posts($args);
+			foreach($myposts as $post): setup_postdata($post) ?>
+				<div class="gallery_item">
+					<a href = "<?php the_permalink(); ?>">
+					<?php 	echo get_the_post_thumbnail($post->ID,'gallery-vertical'); ?>
+                 		<span class = "mask">
+                 			<span class = "arrow">
+                 				<i class="fa fa-arrow-right" aria-hidden="true"></i>
+                 			</span>
+                 		</span>
+                  	</a>
+				</div>						
+		<?php endforeach;  ?>
+		<?php wp_reset_postdata(); ?>							
+		</div>
+	</section>	
+	<?php endif; ?>
+
 </div>
 
 <?php get_footer(); 

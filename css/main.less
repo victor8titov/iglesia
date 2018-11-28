@@ -493,9 +493,9 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
     display: none !important;
 }
 .content_page_home {
-	.content_page_home {
+	.content_page {
 		padding-top: 40px;
-		text-align: center !important;
+		text-align: center;
 		font-size: 14px;
 	}
 	.our_sermons {
@@ -531,11 +531,10 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
 	}
 	.events {
 		margin-top: 85px;
-		.events_section {
-			
-			width: 225px;
-			float: left;
-			
+		.events_section {			
+			width: 221px;
+			//float: left;
+			display: inline-block;
 			h3 {
 				font-size: 24px;
 				color: @hover_color;
@@ -545,41 +544,45 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
 				margin-bottom: 18px;
 				li {
 					position: relative;
+					transition: all 300ms ease-in-out;
 					width: 177px;
 					border-bottom: 1px solid #f2f2f2;
-					font-family: Arial, Helvetica, sans-serif;
-					font-size: 12px;
-					line-height: 44px;
-					color: #a3a3a3;
-					transition: all 300ms ease-in-out;
-					&:hover {
+					a {						
+						font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						line-height: 44px;
+						color: #a3a3a3;
+						&:after {
+							content: '';
+						}
+					}
+					&:hover a {
 						color: #7f4258;
 						cursor: pointer;
 					}
-				}
-				
-				li:before {
-					content: ".";
-					position: absolute;
-					left: -15px;
-					top: -6px;
-					color: #fce374;
-					font-size: 20px;
+					&:before {
+						content: ".";
+						position: absolute;
+						left: -15px;
+						top: 4px;
+						color: #fce374;
+						font-size: 20px
+					}
 				}
 			}
 			a {
 				font-family: Arial, Helvetica, sans-serif;
 				color: #b3b3b3;
 				font-size: 11px;
-				line-height: 24px;
-				
+				line-height: 24px;				
 				&:after {
 					content: ">";
 				}
 			}
 		}
 		.video_section {
-			float: left;
+			//float: left;
+			display: inline-block;
 			margin-left: 20px;
 			position: relative;
 			width: 470px;
@@ -725,8 +728,9 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
 			
 		}
 		.people_say_section {
-			width: 194px;
-			float: left;
+			width: 190px;
+			//float: left;
+			display: inline-block;
 			margin-left: 51px;
 			font-family: Arial, Helvetica, sans-serif;
 			h3 {
@@ -786,19 +790,329 @@ src: url('../fonts/Raleway-Light.ttf') format('truetype');
 		.info_section {
 			width: 100%;
 			margin-top: 72px;
-			border-top: 1px solid #f2f2f2;
-			&:before {
-				content: "";
-				display: table;
-				clear: both;
+			padding-top: 81px;
+			//border-top: 1px solid #f2f2f2;
+			color: #a3a3a3;
+			text-align: center;
+			position: relative;
+			background: url('img/Book_pic.png') no-repeat center top;
+			.desc {
+				text-align: center;
+				font-size: 18px;
+				line-height: 26px;
+				font-style: italic;
+				
 			}
-			.desc {}
-			.title {}
+			.title {
+				font-size: 10px;
+			}
+			&:before {
+				content: '';
+				border-top: 1px solid #f2f2f2;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 390px;
+				
+			}
+			&:after {
+				content: '';
+				border-top: 1px solid #f2f2f2;
+				width: 390px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
 		}
 	
 	}
-}
+	.our_blog {
+		
+		background: #5a1830;
+		position: relative;
+		z-index: 0;
+		padding-top: 50px;
+		padding-bottom: 80px;
 
+		
+		.bg_blog_mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			.opacity(0.2);
+			z-index: -1;
+			background-size: cover;
+		}		
+			
+		.top_tittle {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 50px;
+			.left_arrow_blog {
+				.left_blog {
+					width: 45px;
+					height: 45px;
+					display: block;
+					border: 2px solid transparent;
+					text-align: center;
+					line-height: 45px; 
+					color: rgba(255,255,255,.3);
+					font-size: 30px;
+					.rounded(100%);
+					.transition(all 300ms ease-in-out);
+					cursor: pointer;
+					
+					&:hover {
+						border-color: rgba(255,255,255,.2);
+						color: #fff;
+					}
+				}
+			}
+			.center_info {
+				text-align: center; 
+				margin-left: 38px;
+				margin-right: 38px;
+				
+				.blog_title {
+					color: #ffefa7;
+					font-size: 44px;
+					text-transform: none;
+					margin-bottom: 20px;
+					line-height: 44px;	
+					
+				}
+				.blog_desc {
+					display: inline-block;
+					color: rgba(255,255,255,.5);
+					font-size: 12px;
+					line-height: 24px;
+				}
+			}
+			.right_arrow_blog {
+				.right_blog {
+					.left_arrow_blog > .left_blog
+				}
+			}
+		}
+		.blog_list {
+			width: 1000px;
+			margin: 0 auto;
+			.item_blog {
+				background: url(img/bottom.png);
+				margin: 10px;
+				position: relative;
+				min-width: 225px;
+				min-height: 270px;
+				cursor: pointer;			
+				
+				.mask_hover {
+					
+					background: #fff;
+					//display: flex;
+					//justify-content: flex-start;
+					//align-items: center;
+					.transition(all 300ms ease-in-out);
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0; 
+					left: 0;
+					.blog-item {
+						position: relative;
+						box-sizing: border-box;
+						//width: 225px;
+						//margin: 20px;
+						//margin-right: 0;
+						padding-left: 30px;
+						padding-right: 30px;
+						.item-content {
+							margin: 0;
+							.post-categories {
+								margin-bottom: 18px;
+								margin-top: 25px;
+								li {
+									a {
+										font-family: Arial, Helvetica, sans-serif;
+										font-size: 10px;
+										color: @color_grey;
+										
+										text-transform: uppercase;
+									}
+								} 
+							}
+							.title {
+								font-size: 18px;
+								margin-bottom: 12px;
+								
+								a {
+								color: #000;
+								font-family: Playfair Display;
+								text-transform: none;
+								}
+
+							}
+							.content {
+								font-family: Playfair Display;
+								font-size: 11px;
+								line-height: 18px;
+								color: #b3b3b3;
+							}
+						}
+						.date_comment_info {
+							margin: 58px 0 20px 0;
+				
+							span {
+								display: inline-block;
+								color: #b3b3b3;
+								font-size: 10px;
+								font-family: Arial, Helvetica, sans-serif;
+								line-height: 18px;
+							}
+							.comments {
+								margin-right: 20px;
+								
+								
+							}
+							.heart {
+								margin-right: 45px;
+							}
+							.date {}
+						}
+					}
+				}
+				&:hover {
+					.mask_hover {
+						margin-top: -10px;
+						margin-left: -10px;
+						
+					}
+				}
+			}
+		}
+	}
+	.donation {
+		background: url('img/men_bg.png') no-repeat right bottom;
+		margin-top: 90px;
+		height: 307px;
+
+		.info {
+			width: 178px;
+			margin-right: 50px;
+			float: left;
+			h4 {
+				font-size: 30px;
+				line-height: 43px;
+				color: #7f4258;
+
+				margin-bottom: 27px;
+			}
+			.title {
+				display: inline-block;
+				width: 125px;
+				font-size: 11px;
+				color: #a3a3a3;
+				
+			}
+			.link {
+				margin-top: 32px;
+				display: block;
+				padding: 0 40px 0 40px;
+				height: 57px;
+				color: #fff;
+				font-size: 14px;
+				line-height: 57px;
+				font-family: Arial, Helvetica, sans-serif;
+				text-transform: uppercase;
+				font-weight: bold;
+				background: #7f4258;
+				text-align: center;
+				.rounded(5px);
+				transition: all 300ms ease-in-out;
+				&:after {
+					content: " >";
+				}
+				&:hover {
+					background: #7f4258b9;
+				}
+			}
+		}
+		.quote {
+			font-size: 14px;
+			line-height: 24px;
+			color: #a3a3a3;
+			
+			box-sizing: border-box;
+			width: 430px;
+			padding: 0 20px 0 20px;
+			float: left;
+			p {
+				text-align: right;
+			}
+			.duble {
+				font-size: 53px;
+				line-height: 24px;
+			}
+			.quote_ {
+				font-style: italic;
+			}
+			
+		}
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+	.gallery {
+		.gallery_list {
+			.gallery_item {
+				display: inline-block;
+				//float: left; 
+				//margin: 0 20px 20px 0;
+				position: relative;
+				//.rounded(3px);
+				//overflow: hidden;
+				.transition(all 300ms ease-in-out);
+				
+				&:hover {
+					.mask {
+						.opacity(1);
+						
+					}
+				}
+				.mask {
+					.opacity(0);
+					.transition(all 300ms ease-in-out);
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(127,66,88,0.6);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					.arrow {
+						width: 70px;
+						background: @header_color;
+						height: 70px;
+						display: block;
+						color: #fff;
+						font-size: 20px;
+						text-align: center;
+						line-height: 70px; 
+						.rounded(100%);
+						
+					}
+				}
+			}
+		}
+	}
+	
+}
 
 
 

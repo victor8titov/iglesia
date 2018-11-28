@@ -391,7 +391,7 @@ function aletheme_metaboxes($meta_boxes) {
 
         'fields' => array(
 			//*************************************************
-			//			 Our sermons		
+			//			 Our sermons block		
 			array(
                 'name' 		=> __('Show Box Sermons', 'aletheme'),
                 'desc' 		=> 'Select to show the infobox',
@@ -451,7 +451,7 @@ function aletheme_metaboxes($meta_boxes) {
                 'type' => 'file',
             ),
             //**************************************************
-			//			Events
+			//			Events block
 			array(
                 'name' 		=> __('Show Events Box', 'aletheme'),
                 'desc' 		=> 'Select to show the infobox',
@@ -474,7 +474,7 @@ function aletheme_metaboxes($meta_boxes) {
                 'desc' => 'Insert the text',
                 'id'   => $prefix . 'events_text', 
 				'std'  => '' ,
-                'type' => 'textarea',
+                'type' => 'textarea_code',
             ),
             array(
                 'name' => __('Video', 'aletheme'),
@@ -504,7 +504,50 @@ function aletheme_metaboxes($meta_boxes) {
 				'std'  => '' ,
                 'type' => 'textarea',
             ),
-		)
+            //**************************************************
+            //			Our Blog block
+            array(
+                'name' 		=> __('Show Blog Box', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'blog_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+            array(
+                'name' => __('BG image for Our Blog', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'blog_bg', 
+				'std'  => '',
+                'type' => 'file',
+            ),
+            //**************************************************
+            //			Donation block
+            array(
+                'name' 		=> __('Show Donation Box', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'donation_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+            //**************************************************
+            //			Gallery block
+            array(
+                'name' 		=> __('Show Gallery Box', 'aletheme'),
+                'desc' 		=> 'Select to show the infobox',
+                'id'   		=> $prefix . 'gallery_display', 
+				'type' 		=> 'select',
+				'options' 	=> array(
+						array('name'=>'Show Block','value'=>'show'),
+						array('name'=>'Hide Block','value'=>'hide')
+						)
+            ),
+        )    
     );
 
     $meta_boxes[] = array(

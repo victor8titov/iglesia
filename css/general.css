@@ -1585,7 +1585,7 @@ html[xmlns] .slides {
   clear: both;
 }
 .content_page_home .gallery .gallery_list .gallery_item {
-  display: inliblock;
+  display: inline-block;
   position: relative;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
